@@ -29,7 +29,35 @@ function prepareData(data) {
 
     showData(queueLength);
     chartJs(queueLengthArray);
+
+
+
+
+    const url2 = "https://foobar-ad40.restdb.io/rest/queue";
+    const key = "5fbf87774af3f9656800cf33"
+
+    const dataToPost = {
+        numberOfPeople: queueLength
+    };
+
+    const postData = JSON.stringify(dataToPost);
+    fetch(url2, {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "x-apikey": key,
+            "cache-control": "no-cache"
+        },
+        body: postData
+    })
+        .then(res => res.json())
+        .then(data => console.log(data));
+
+
 };
+
+
+
 
 function showData(queueLenght) {
     document.querySelector(".module1 h2 span").textContent = queueLenght;
@@ -72,3 +100,4 @@ function chartJs(queue) {
         }
     });
 }
+
