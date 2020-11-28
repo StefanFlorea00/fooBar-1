@@ -63,20 +63,21 @@ nav > ul {
     flex-flow: column wrap;
 }
 
-ul > li {
-    padding-left: 1.3em;
-    font-size: 1.2em;
+nav > ul > li {
+    padding: 1em 1.3em;
+    font-size: 1.3em;
     position: relative;
     z-index: 2;
-    padding: 1em 1.3em;
+    border-left: solid 5px transparent;
+
 }
 
-ul > li:hover {
+nav > ul > li:hover {
     color: var(--highlight-color);
     cursor: pointer;
     background-color: var(--nav-color);
-    border-left: solid 4px var(--highlight-color);
-    font-weight: bold;
+    box-sizing: content-box;
+    border-left: solid 5px var(--highlight-color);
 }
 
 nav > img {
@@ -164,6 +165,9 @@ article {
     background-color: var(--primary-color);
     border-left: solid 5px transparent;
     cursor: pointer;
+
+    display: flex;
+    flex-flow: column;
 }
 
 article:hover {
@@ -190,7 +194,6 @@ article:nth-child(2), article:nth-child(3), article:nth-child(6) {
     text-align: center;
     align-content: center;
     justify-content: center;
-    display: flex;
 }   
 
     /* hours*/
@@ -237,7 +240,7 @@ article:nth-child(2), article:nth-child(3), article:nth-child(6) {
     justify-self: flex-end;
 
     position: relative;
-    left: -15px;
+    left: -15%;
 
     }
 
@@ -265,12 +268,15 @@ article:nth-child(2), article:nth-child(3), article:nth-child(6) {
 .wrapper-taps {
     display:grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    justify-content: space-evenly;
-    padding: 2em;
+    justify-content: space-between;
+    padding: 1em;
+    grid-gap: 15px;
+
 }
 
 .beer-name {
     grid-column: auto / span 2;
+    margin: 0.5em 0;
 }
 .outside {
     border: solid 1px var(--highlight-color);
@@ -286,21 +292,97 @@ article:nth-child(2), article:nth-child(3), article:nth-child(6) {
     height: 50%;
 
 }
-
-.individual-tap {
+.flex {
+    display: flex;
+    flex-flow: column;
+}
+.individual-tap, .tap-wrapper {
     display: grid;
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(2, auto);
 }
 
-.individual-tap > img {
+.flex > .tap-wrapper > img {
     grid-column: 1;
     grid-row: 1;
     max-height: 120px;
+    justify-self: center;
 }
 
 .individual-tap > .outside {
     grid-column: 2;
     grid-row: 1;
+}
+
+
+/* working on expanded components */
+
+.collapsed {
+}
+
+/* queue */
+
+.client-extanded {
+    display:flex; 
+    flex-flow: row wrap;
+}
+
+.individual-client {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.order-queue > h3 {
+    font-size: 1.4em;
+    margin-bottom: 0.5em;
+}
+
+.order-queue {
+    position: relative;
+    left: -10%;
+}
+
+.order-queue > ul{
+    margin-top: 0;
+    text-align: center;
+}
+
+.order-queue > ul > li {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.order-queue > h3 > span {
+    color: var(--highlight-color);
+}
+
+.client-logo {
+    grid-row: auto  / span 2;
+    max-height: 150px;
+    height: 100%;
+    justify-self: center;
+}
+
+/* bartenders extanded*/
+
+.activity > h3 {
+    color: white;
+    margin: 0.5em;
+}
+
+.activity > h3 > span {
+    color: var(--highlight-color);
+}
+
+/* taps extanded*/
+
+.extanded-tap > h3 {
+    margin: 0;
+    color: white;
+}
+
+.extanded-tap > h3 > span {
+    color: var(--highlight-color);
 }
 
