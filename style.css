@@ -256,10 +256,27 @@ article:nth-child(6) {
   padding-top: 2em;
 }
 
+.stored-keg h2 {
+  display: flex;
+}
+
 .kegs {
   padding-left: 2em;
   display: flex;
   flex-flow: row wrap;
+}
+
+.stored-keg > .hidden {
+  display: none;
+}
+
+h2 .hidden {
+  display: none;
+}
+
+.keg-amount {
+  color: white;
+  margin-left: auto;
 }
 
 .kegs > img {
