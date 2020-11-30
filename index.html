@@ -262,35 +262,39 @@
                 </div>
         </article>
 
+        <template id="tap-template">
+            <div class="flex">
+                <div class="tap-wrapper">
+                    <img src="assets/white-tap.png" alt="white-tap">
+                    <div class="bar-tap">
+                        <div class="outside">
+                            <div class="inside"></div>
+                        </div>
+                    </div>
+                    <p class="beer-name">Name of the beer</p>
+                </div>
+
+                <div class="collapsed extanded-tap">
+                    <h3> <span>150</span> units left</h3>
+                    <h3 class="bartender-ontap"> <span class="used">Used</span> by Peter</h3>
+                    <div class="button-circle">
+                        <div class="small-ver"></div>
+                        <div class="small-hor"></div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </template>
+
+
+
         <article id="ontap">
             <p class="pinned">TAPS</p>
             <div class="wrapper-taps">
 
-                <div class="flex">
-                    <div class="tap-wrapper">
-                        <img src="assets/white-tap.png" alt="white-tap">
-                        <div class="bar-tap">
-                            <div class="outside">
-                                <div class="inside"></div>
-                            </div>
-                        </div>
-                        <p class="beer-name">Name of the beer</p>
-                    </div>
-
-                    <div class="collapsed extanded-tap">
-                        <h3> <span>150</span> units left</h3>
-                        <h3 class="bartender-ontap"> <span class="used">Used</span> by Peter</h3>
-                        <div class="button-circle">
-                            <div class="small-ver"></div>
-                            <div class="small-hor"></div>
-
-                        </div>
-
-
-                    </div>
-                </div>
-
-                <div class="flex">
+                <!-- <div class="flex">
                     <div class="tap-wrapper">
                         <img src="assets/white-tap.png" alt="white-tap">
                         <div class="bar-tap">
@@ -400,7 +404,7 @@
 
                     </div>
 
-                </div>
+                </div> -->
 
             </div>
         </article>
@@ -413,6 +417,6 @@
 <script src="animation.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script src="main.js" type="module"></script>
-
+<script src="/scripts/taps.js" type="module"></script>
 
 </html>
