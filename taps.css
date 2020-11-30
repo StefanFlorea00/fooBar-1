@@ -1,0 +1,26 @@
+#taps-section {
+  width: 60vw;
+  height: 30vh;
+  background-color: slategray;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: ; */
+}
+
+.taps-wrapper {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid hotpink;
+  justify-content: space-evenly;
+}
+
+.tap {
+  border: 1px solid hotpink;
+  width: 50px;
+  height: auto;
+}
+
+.tap > img {
+  width: 40px;
+  height: 70px;
+}
