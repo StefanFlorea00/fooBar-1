@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
     <title>FooBar DashBoard</title>
 </head>
 
@@ -31,7 +32,7 @@
 
     <section>
 
-        <article id="queue extanded">
+        <article id="queue">
             <p class="pinned">QUEUE</p>
             <h1><span> 4 </span>PEOPLE IN QUEUE</h1>
 
@@ -192,7 +193,7 @@
                     <div class="portrait"><img src="assets/jonas.jpg" alt="jonas">
                         <div class="status" id="status_jonas"></div>
                     </div>
-                    <div class="activity">
+                    <div class="activity collapsed">
                         <h3>Serving Customer#<span>Id</span></h3>
                         <h3>Receiving paiement<span></span></h3>
                     </div>
@@ -202,7 +203,7 @@
                     <div class="portrait"><img src="assets/peter.jpg" alt="peter">
                         <div class="status" id="status_peter"></div>
                     </div>
-                    <div class="activity">
+                    <div class="activity collapsed">
                         <h3 class="serving">Serving Customer#<span>Id</span></h3>
                         <h3 class="tap-paiement">Pouring from tap#<span>3</span></h3>
                     </div>
@@ -276,9 +277,15 @@
                         <p class="beer-name">Name of the beer</p>
                     </div>
 
-                    <div class="extanded-tap">
-                        <h3> <span>150</span> units</h3>
-                        <h3> <span class="used">Used</span> by Peter</h3>
+                    <div class="collapsed extanded-tap">
+                        <h3> <span>150</span> units left</h3>
+                        <h3 class="bartender-ontap"> <span class="used">Used</span> by Peter</h3>
+                        <div class="button-circle">
+                            <div class="small-ver"></div>
+                            <div class="small-hor"></div>
+
+                        </div>
+
 
                     </div>
                 </div>
@@ -294,8 +301,14 @@
                         <p class="beer-name">Name of the beer</p>
                     </div>
 
-                    <div class="extanded-tap">
-                        <h3> <span>150</span> units</h3>
+                    <div class="collapsed extanded-tap">
+                        <h3 class="units"> <span>150</span> units left</h3>
+                        <h3 class="bartender-ontap"> <span class="used">Used</span> by Dannie</h3>
+                        <div class="button-circle">
+                            <div class="small-ver"></div>
+                            <div class="small-hor"></div>
+                        </div>
+
 
                     </div>
                 </div>
@@ -311,8 +324,13 @@
                         <p class="beer-name">Name of the beer</p>
                     </div>
 
-                    <div class="extanded-tap">
-                        <h3> <span>150</span> units</h3>
+                    <div class="collapsed extanded-tap">
+                        <h3> <span>150</span> units left</h3>
+                        <h3 class="bartender-ontap visibility-collapsed"> <span class="used">Used</span> by Peter</h3>
+                        <div class="button-circle">
+                            <div class="small-ver"></div>
+                            <div class="small-hor"></div>
+                        </div>
 
                     </div>
                 </div>
@@ -328,9 +346,13 @@
                         <p class="beer-name">Name of the beer</p>
                     </div>
 
-                    <div class="extanded-tap">
-                        <h3> <span>150</span> units</h3>
-                        <h3> <span class="used">Used</span> by Peter</h3>
+                    <div class="collapsed extanded-tap">
+                        <h3> <span>150</span> units left</h3>
+                        <h3 class="bartender-ontap"> <span class="used">Used</span> by Jonas</h3>
+                        <div class="button-circle">
+                            <div class="small-ver"></div>
+                            <div class="small-hor"></div>
+                        </div>
 
                     </div>
                 </div>
@@ -346,8 +368,13 @@
                         <p class="beer-name">Name of the beer</p>
                     </div>
 
-                    <div class="extanded-tap">
-                        <h3> <span>150</span> units</h3>
+                    <div class="collapsed extanded-tap">
+                        <h3> <span>150</span> units left</h3>
+                        <h3 class="bartender-ontap visibility-collapsed"> <span class="used">Used</span> by Peter</h3>
+                        <div class="button-circle">
+                            <div class="small-ver"></div>
+                            <div class="small-hor"></div>
+                        </div>
 
                     </div>
                 </div>
@@ -363,10 +390,16 @@
                         <p class="beer-name">Name of the beer</p>
                     </div>
 
-                    <div class="extanded-tap">
-                        <h3> <span>150</span> units</h3>
+                    <div class="collapsed extanded-tap">
+                        <h3> <span>150</span> units left</h3>
+                        <h3 class="bartender-ontap visibility-collapsed"> <span class="used">Used</span> by Peter</h3>
+                        <div class="button-circle">
+                            <div class="small-ver"></div>
+                            <div class="small-hor"></div>
+                        </div>
 
                     </div>
+
                 </div>
 
             </div>
@@ -377,5 +410,6 @@
 
 </body>
 <script src="main.js"></script>
+<script src="animation.js"></script>
 
 </html>
