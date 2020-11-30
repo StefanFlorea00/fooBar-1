@@ -189,35 +189,41 @@
 
             <div class="wrapper-bartenders">
 
-                <div class="bartender-extanded">
+                <div class="bartender-extanded" id="bartender_0">
                     <div class="portrait"><img src="assets/jonas.jpg" alt="jonas">
                         <div class="status" id="status_jonas"></div>
                     </div>
                     <div class="activity collapsed">
-                        <h3>Serving Customer#<span>Id</span></h3>
-                        <h3>Receiving paiement<span></span></h3>
+                        <h3 class="serving">Serving Customer#<span>Id</span></h3>
+                        <h3 class="payment">Receiving payment<span></span></h3>
+                        <h3 class="tap-paiement">Pouring from tap#<span>3</span></h3>
                     </div>
                 </div>
 
-                <div class="bartender-extanded">
+                <div class="bartender-extanded" id="bartender_1">
                     <div class="portrait"><img src="assets/peter.jpg" alt="peter">
                         <div class="status" id="status_peter"></div>
                     </div>
                     <div class="activity collapsed">
                         <h3 class="serving">Serving Customer#<span>Id</span></h3>
+                        <h3  class="payment">Receiving payment<span></span></h3>
                         <h3 class="tap-paiement">Pouring from tap#<span>3</span></h3>
                     </div>
                 </div>
 
 
-                <div class="bartender-extanded">
+                <div class="bartender-extanded" id="bartender_2">
                     <div class="portrait"><img src="assets/dannie.jpg" alt="dannie">
-                        <div class="status" id="status_dannie"></div>
+                        <div class="status" id="status_dannie">
+                        </div>
+                        <div class="activity collapsed">
+                            <h3 class="serving">Serving Customer#<span>Id</span></h3>
+                            <h3  class="payment">Receiving payment<span></span></h3>
+                            <h3 class="tap-paiement">Pouring from tap#<span>3</span></h3>
+                        </div>
                     </div>
 
                     <div class="activity">
-                        <h3 class="serving"><span></span></h3>
-                        <h3 class="tap-paiement"><span></span></h3>
                     </div>
                 </div>
 
@@ -226,40 +232,16 @@
 
         <article id="storage">
             <p class="pinned">STORAGE</p>
-            <div class="wrapper-storage">
-
+            <div class="wrapper-storage"></div>
+            
+            <template id="storage-template">
                 <div class="stored-keg">
                     <h2>El Hefe</h2>
                     <div class="kegs">
                         <img src="assets/kegs.svg" alt="kegs">
-                        <img src="assets/kegs.svg" alt="kegs">
-                        <img src="assets/kegs.svg" alt="kegs">
                     </div>
                 </div>
-
-                <div class="stored-keg">
-                    <h2>El Hefe</h2>
-                    <div class="kegs">
-                        <img src="assets/kegs.svg" alt="kegs">
-                        <img src="assets/kegs.svg" alt="kegs">
-                        <img src="assets/kegs.svg" alt="kegs">
-                        <img src="assets/kegs.svg" alt="kegs">
-                        <img src="assets/kegs.svg" alt="kegs">
-                        <img src="assets/kegs.svg" alt="kegs">
-                        <img src="assets/kegs.svg" alt="kegs">
-                    </div>
-                </div>
-
-                <div class="stored-keg">
-                    <h2>El Hefe</h2>
-                    <div class="kegs">
-                        <img src="assets/kegs.svg" alt="kegs">
-                        <img src="assets/kegs.svg" alt="kegs">
-                        <img src="assets/kegs.svg" alt="kegs">
-                        <img src="assets/kegs.svg" alt="kegs">
-                        <img src="assets/kegs.svg" alt="kegs">
-                    </div>
-                </div>
+            </template>
         </article>
 
         <article id="ontap">
@@ -409,7 +391,6 @@
 
 
 </body>
-<script src="main.js"></script>
 <script src="animation.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script src="main.js" type="module"></script>

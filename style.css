@@ -1,171 +1,177 @@
 :root {
-    --primary-color: #276996;
-    --secondary-color: #373F4A;
-    --background-color: #B2C1D5;
-    --nav-color: #5E8AA8;
-    --highlight-color: #F2BE12;
+  --primary-color: #276996;
+  --secondary-color: #373f4a;
+  --background-color: #b2c1d5;
+  --nav-color: #5e8aa8;
+  --highlight-color: #f2be12;
 
-    --primary-font:'Oxygen', sans-serif;
-    --title-font: 'Futura', sans-serif;
+  --primary-font: "Oxygen", sans-serif;
+  --title-font: "Futura", sans-serif;
 }
 
 body {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 
-    display: flex;
-    flex-flow: row;
+  display: flex;
+  flex-flow: row;
 
-    background-color: var(--background-color);
-    font-family: var(--primary-font);
+  background-color: var(--background-color);
+  font-family: var(--primary-font);
 }
 
 h1 {
-    margin: 0;
-    font-size: 3em;
-    color: white;
+  margin: 0;
+  font-size: 3em;
+  color: white;
 }
 
 h2 {
-    color: var(--highlight-color);
-    margin: 0.5em;
+  color: var(--highlight-color);
+  margin: 0.5em;
 }
 
 h1 > span {
-    font-size: 2em;
-    color: var(--highlight-color);
+  font-size: 2em;
+  color: var(--highlight-color);
 }
 
 p {
-    color: var(--highlight-color);
+  color: var(--highlight-color);
 }
 
-/* styling for the navigation bar */ 
+/* styling for the navigation bar */
 
 nav {
-    position: relative;
-    background-color: var(--primary-color);
-    color: white;
+  position: relative;
+  background-color: var(--primary-color);
+  color: white;
 
-    display: flex;
-    flex-flow: column;
-    align-items: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 
-    font-family: var(--title-font);
+  font-family: var(--title-font);
 }
 
 nav > ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: flex;
-    flex-flow: column wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
 }
 
 nav > ul > li {
-    padding: 1em 1.3em;
-    font-size: 1.3em;
-    position: relative;
-    z-index: 2;
-    border-left: solid 5px transparent;
-
+  padding: 1em 1.3em;
+  font-size: 1.3em;
+  position: relative;
+  z-index: 2;
+  border-left: solid 5px transparent;
 }
 
 nav > ul > li:hover {
-    color: var(--highlight-color);
-    cursor: pointer;
-    background-color: var(--nav-color);
-    box-sizing: content-box;
-    border-left: solid 5px var(--highlight-color);
+  color: var(--highlight-color);
+  cursor: pointer;
+  background-color: var(--nav-color);
+  box-sizing: content-box;
+  border-left: solid 5px var(--highlight-color);
 }
 
 nav > img {
-    width: 80%;
-    margin: 1rem;
-    border-radius: 10px;
+  width: 80%;
+  margin: 1rem;
+  border-radius: 10px;
 }
 
 nav > img:hover {
-    cursor:pointer;
-    transform: scale(1.1);
+  cursor: pointer;
+  transform: scale(1.1);
 }
 .ver {
-    height: 100vh;
-    width: 5px;
-    background-color: var(--highlight-color);
+  height: 100vh;
+  width: 5px;
+  background-color: var(--highlight-color);
 
-    align-self: flex-end;
-    position: fixed;
-    z-index: 1;
+  align-self: flex-end;
+  position: fixed;
+  z-index: 1;
 }
 
-/* nav bar for mobile */ 
+.hidden {
+  display: none;
+}
+
+/* nav bar for mobile */
 
 @media only screen and (max-width: 1295px) {
-    body {
-        flex-flow: column;
-    }
-
-    nav {
-        display: none;}
-
-    .ver {
-        position: relative;
-        height: 100%;
-    }
-
-    h1 {
-        font-size: 2em;
-    }
-
-    #hours > .hour-display {
-        font-size: 2em;
-    }
+  body {
+    flex-flow: column;
   }
 
-/* styling for the section */ 
+  nav {
+    display: none;
+  }
+
+  .ver {
+    position: relative;
+    height: 100%;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  #hours > .hour-display {
+    font-size: 2em;
+  }
+}
+
+/* styling for the section */
 
 section {
-    display: flex;
-    flex-flow: row wrap;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .pinned {
-    color: var(--highlight-color);
-    position: absolute;
-    margin: 0;
-    top: 8px;
-    left: 8px;
-    font-size: 0.7em;
+  color: var(--highlight-color);
+  position: absolute;
+  margin: 0;
+  top: 8px;
+  left: 8px;
+  font-size: 0.7em;
 }
 
 article {
-    position: relative;
-    flex: 1 1 auto; 
-    padding: 1em;
-    margin: 10px;
-    background-color: var(--primary-color);
-    border-left: solid 5px transparent;
-    cursor: pointer;
+  position: relative;
+  flex: 1 1 auto;
+  padding: 1em;
+  margin: 10px;
+  background-color: var(--primary-color);
+  border-left: solid 5px transparent;
+  cursor: pointer;
 
-    display: flex;
-    flex-flow: column;
+  display: flex;
+  flex-flow: column;
 }
 
 article:hover {
-    box-sizing: content-box;
-    border-left: solid 5px var(--highlight-color);
-    transform: scale(1.01);
-    -webkit-box-shadow: 9px 10px 18px -7px #000000; 
-box-shadow: 9px 10px 18px -7px #000000;
+  box-sizing: content-box;
+  border-left: solid 5px var(--highlight-color);
+  transform: scale(1.01);
+  -webkit-box-shadow: 9px 10px 18px -7px #000000;
+  box-shadow: 9px 10px 18px -7px #000000;
 }
 
 /* HERE IS THE COOL SHIT */
 
-article:nth-child(2), article:nth-child(3), article:nth-child(6) {
-    background-color: var(--secondary-color);
+article:nth-child(2),
+article:nth-child(3),
+article:nth-child(6) {
+  background-color: var(--secondary-color);
 }
 
 /* specific articles */
@@ -174,149 +180,148 @@ article:nth-child(2), article:nth-child(3), article:nth-child(6) {
 
 /*queue */
 
-#queue, #serving {
-    text-align: center;
-    align-content: center;
-    justify-content: center;
-}   
+#queue,
+#serving {
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
 
-    /* hours*/
-    #hours {
-        text-align: center;
-        font-size: 1.2em;
-        padding: 1em;
-    }
+/* hours*/
+#hours {
+  text-align: center;
+  font-size: 1.2em;
+  padding: 1em;
+}
 
-    .hour-display {
-        color: var(--highlight-color);
-        font-size: 5rem;
-    }
+.hour-display {
+  color: var(--highlight-color);
+  font-size: 5rem;
+}
 
-    .hour-display + p {
-        color: white;
-        margin: 0;
-    }
+.hour-display + p {
+  color: white;
+  margin: 0;
+}
 
-/*bartenders*/ 
+/*bartenders*/
 
 .wrapper-bartenders {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
 }
 
 .portrait > img {
-    border-radius: 100%;
-    grid-column: 1;
-    grid-row:1;
+  border-radius: 100%;
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .portrait {
-    display: grid;
-    grid-template-columns: 1;
-    grid-template-rows: 1;
-    margin: 0.5em;
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 1;
+  margin: 0.5em;
 }
 
 .portrait > .status {
+  grid-column: 1;
+  grid-row: 1;
 
-    grid-column: 1;
-    grid-row:1;
+  height: 30px;
+  width: 30px;
+  background-color: red;
+  border-radius: 100%;
 
-    height: 30px;
-    width: 30px;
-    background-color: red;
-    border-radius: 100%;
+  align-self: flex-end;
+  justify-self: flex-end;
 
-    align-self: flex-end;
-    justify-self: flex-end;
+  position: relative;
+  left: -15%;
+}
 
-    position: relative;
-    left: -15%;
-
-    }
-
-
+.portrait > .free {
+  background-color: green;
+}
 
 /*storage*/
 
 .wrapper-storage {
-    display: grid;
-    grid:
-      auto-flow minmax(100px, auto) /
-      repeat(auto-fit, minmax(clamp(33.3333% - 1rem, 300px, 100%), 1fr));
-    
-    padding-top: 2em;
+  display: grid;
+  grid:
+    auto-flow minmax(100px, auto) /
+    repeat(auto-fit, minmax(clamp(33.3333% - 1rem, 300px, 100%), 1fr));
+
+  padding-top: 2em;
 }
 
 .kegs {
-    padding-left: 2em;
-    display: flex;
-    flex-flow: row wrap;
+  padding-left: 2em;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .kegs > img {
-    height: 30px;
-    margin: 0.5em 0.5em;
+  height: 30px;
+  margin: 0.5em 0.5em;
 }
 
 /*taps*/
 
 #ontap {
-    flex: 1 1 350px;    
+  flex: 1 1 350px;
 }
 
 .wrapper-taps {
-    display:grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    justify-content: space-between;
-    padding: 0.5em;
-    grid-gap: 15px;
-
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  justify-content: space-between;
+  padding: 0.5em;
+  grid-gap: 15px;
 }
 
 .beer-name {
-    justify-self: center;
-    margin: 0.5em 0;
+  justify-self: center;
+  margin: 0.5em 0;
 }
 .outside {
-    border: solid 1px var(--highlight-color);
-    height: 100%;
-    width: 20px;
+  border: solid 1px var(--highlight-color);
+  height: 100%;
+  width: 20px;
 
-    display: flex;
-    flex-flow: column-reverse;
+  display: flex;
+  flex-flow: column-reverse;
 }
 
 .inside {
-    background-color: var(--highlight-color);
-    height: 50%;
-
+  background-color: var(--highlight-color);
+  height: 50%;
 }
 .flex {
-    display: flex;
-    flex-flow: column;
-    align-content: center;
-
+  display: flex;
+  flex-flow: column;
+  align-content: center;
 }
-.individual-tap, .tap-wrapper {
-    display: grid;
-    grid-template-rows: repeat(2, auto);
+.individual-tap,
+.tap-wrapper {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
 }
 
 .flex > .tap-wrapper > img {
-    grid-column: 1;
-    grid-row: 1;
-    max-height: 120px;
-    justify-self: center;
-    margin-right: 10px;
+  grid-column: 1;
+  grid-row: 1;
+  max-height: 120px;
+  justify-self: center;
+  margin-right: 10px;
 }
 
 .bar-tap {
-    grid-column: 1;
-    grid-row: 1;
-    justify-self: center;
-    margin-left: 110px;
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: center;
+  margin-left: 110px;
 }
 
 /* working on expanded components */
@@ -324,117 +329,117 @@ article:nth-child(2), article:nth-child(3), article:nth-child(6) {
 /* queue */
 
 .client-extanded {
-    display:flex; 
-    flex-flow: row wrap;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .individual-client {
-    display: flex;
-    flex-flow: row wrap;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .order-queue > h3 {
-    font-size: 1.4em;
-    margin-bottom: 0.5em;
+  font-size: 1.4em;
+  margin-bottom: 0.5em;
 }
 
 .order-queue {
-    position: relative;
-    left: -10%;
+  position: relative;
+  left: -10%;
 }
 
-.order-queue > ul{
-    margin-top: 0;
-    text-align: center;
+.order-queue > ul {
+  margin-top: 0;
+  text-align: center;
 }
 
 .order-queue > ul > li {
-    padding: 0;
-    margin: 0;
-    text-align: center;
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
 
 .order-queue > h3 > span {
-    color: var(--highlight-color);
+  color: var(--highlight-color);
 }
 
 .client-logo {
-    grid-row: auto  / span 2;
-    max-height: 150px;
-    height: 100%;
-    justify-self: center;
+  grid-row: auto / span 2;
+  max-height: 150px;
+  height: 100%;
+  justify-self: center;
 }
 
 /* bartenders extanded*/
 
 .activity > h3 {
-    color: white;
-    margin: 0.5em;
+  color: white;
+  margin: 0.5em;
 }
 
 .activity > h3 > span {
-    color: var(--highlight-color);
+  color: var(--highlight-color);
 }
 
 /* taps extanded*/
 
 .flex {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .visibility-collapsed {
-    visibility: collapse;
+  visibility: collapse;
 }
 
 .extanded-tap {
-    display: grid;
-    grid-template-rows: repeat(3, auto);
-    justify-items: center;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  justify-items: center;
 }
 
 .units {
-    grid-row: 1;
-
+  grid-row: 1;
 }
 .extanded-tap > h3 {
-    margin: 0;
-    color: white;
+  margin: 0;
+  color: white;
 }
 
 .extanded-tap > h3 > span {
-    color: var(--highlight-color);
+  color: var(--highlight-color);
 }
 
 .button-circle {
-    height: 50px;
-    width: 50px;
-    border: solid 1px white;
-    border-radius: 100%;
-    margin: 1em;
+  height: 50px;
+  width: 50px;
+  border: solid 1px white;
+  border-radius: 100%;
+  margin: 1em;
 
-    grid-row: 3;
-    justify-self: center;
-    display: grid;
+  grid-row: 3;
+  justify-self: center;
+  display: grid;
 }
 
-/* animation for extension */ 
+/* animation for extension */
 
 .collapsed {
-    display: none;
+  display: none;
 }
 
 /* plus sign */
 
-.small-ver, .small-hor {
-    width: 50%;
-    height: 1px;
-    background-color: white;
-    align-self: center;
-    justify-self: center;
-    grid-row: 1;
-    grid-column: 1;
+.small-ver,
+.small-hor {
+  width: 50%;
+  height: 1px;
+  background-color: white;
+  align-self: center;
+  justify-self: center;
+  grid-row: 1;
+  grid-column: 1;
 }
 
 .small-ver {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }

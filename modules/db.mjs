@@ -6,15 +6,15 @@ const restDbAPIKey = "5fbf87774af3f9656800cf33" //RestDB API key
 
 export let rootData = "";
 
-export function get() {
+export function get(callback) {
     fetch(url)
         .then((response) => response.json())
         .then((data) => {
-            prepareData(data);
+            callback(data);
         });
 };
 
-function prepareData(data) {
+export function prepareData(data) {
     showData(data);
     rootData = data;
 };
@@ -51,11 +51,11 @@ function getQueue(){
     return rootData.queue;
 }
 
-function getServing(){
+export function getServing(){
     return rootData.serving;
 }
 
-function getBartenders(){
+export function getBartenders(){
     return rootData.bartenders;
 }
 
@@ -63,7 +63,7 @@ export function getTaps(){
     return rootData.taps;
 }
 
-function getStorage(){
+export function getStorage(){
     return rootData.storage;
 }
 
