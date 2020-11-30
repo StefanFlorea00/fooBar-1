@@ -23,8 +23,8 @@ body {
 
 h1 {
     margin: 0;
-    color: var(--highlight-color);
     font-size: 3em;
+    color: white;
 }
 
 h2 {
@@ -34,6 +34,7 @@ h2 {
 
 h1 > span {
     font-size: 2em;
+    color: var(--highlight-color);
 }
 
 p {
@@ -108,24 +109,7 @@ nav > img:hover {
     }
 
     nav {
-        display: flex;
-        flex-flow: row;
-    }
-
-    nav > ul {
-        display: grid;
-        grid-template-columns: repeat(2, auto);
-        grid-template-rows: repeat(3, auto);
-    }
-
-    ul > li {
-        font-size: 0.7em;
-        padding: 1em 0;
-    }
-
-    nav > img {
-        width: 120px;
-    }
+        display: none;}
 
     .ver {
         position: relative;
@@ -200,10 +184,17 @@ article:nth-child(2), article:nth-child(3), article:nth-child(6) {
     #hours {
         text-align: center;
         font-size: 1.2em;
+        padding: 1em;
     }
 
     .hour-display {
+        color: var(--highlight-color);
         font-size: 5rem;
+    }
+
+    .hour-display + p {
+        color: white;
+        margin: 0;
     }
 
 /*bartenders*/ 
@@ -213,6 +204,7 @@ article:nth-child(2), article:nth-child(3), article:nth-child(6) {
     flex-flow: row wrap;
     justify-content: space-evenly;
 }
+
 .portrait > img {
     border-radius: 100%;
     grid-column: 1;
@@ -249,6 +241,11 @@ article:nth-child(2), article:nth-child(3), article:nth-child(6) {
 /*storage*/
 
 .wrapper-storage {
+    display: grid;
+    grid:
+      auto-flow minmax(100px, auto) /
+      repeat(auto-fit, minmax(clamp(33.3333% - 1rem, 300px, 100%), 1fr));
+    
     padding-top: 2em;
 }
 
@@ -265,6 +262,10 @@ article:nth-child(2), article:nth-child(3), article:nth-child(6) {
 
 /*taps*/
 
+#ontap {
+    flex: 1 1 350px;    
+}
+
 .wrapper-taps {
     display:grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -275,7 +276,7 @@ article:nth-child(2), article:nth-child(3), article:nth-child(6) {
 }
 
 .beer-name {
-    grid-column: auto / span 2;
+    justify-self: center;
     margin: 0.5em 0;
 }
 .outside {
@@ -295,10 +296,11 @@ article:nth-child(2), article:nth-child(3), article:nth-child(6) {
 .flex {
     display: flex;
     flex-flow: column;
+    align-content: center;
+
 }
 .individual-tap, .tap-wrapper {
     display: grid;
-    grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(2, auto);
 }
 
@@ -307,13 +309,15 @@ article:nth-child(2), article:nth-child(3), article:nth-child(6) {
     grid-row: 1;
     max-height: 120px;
     justify-self: center;
+    margin-right: 10px;
 }
 
-.individual-tap > .outside {
-    grid-column: 2;
+.bar-tap {
+    grid-column: 1;
     grid-row: 1;
+    justify-self: center;
+    margin-left: 110px;
 }
-
 
 /* working on expanded components */
 
@@ -385,6 +389,7 @@ article:nth-child(2), article:nth-child(3), article:nth-child(6) {
 .extanded-tap {
     display: grid;
     grid-template-rows: repeat(3, auto);
+    justify-items: center;
 }
 
 .units {
