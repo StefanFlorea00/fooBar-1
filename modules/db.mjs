@@ -47,7 +47,7 @@ export function getBar(){
     return rootData.bar;
 }
 
-function getQueue(){
+export function getQueue(){
     return rootData.queue;
 }
 
@@ -71,4 +71,6 @@ export function getQueueLength(){
     return rootData.queue.length;
 }
 
-
+export function getClosingTime(){
+    return rootData.bar.closingTime;
+}

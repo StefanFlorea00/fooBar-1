@@ -1,5 +1,8 @@
 let extended = false;
 
+const templateSource = "#storage-template";
+const templateDestination = "";
+
 export function init(data){
     console.log(data);
 

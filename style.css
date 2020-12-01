@@ -37,6 +37,12 @@ h1 > span {
   color: var(--highlight-color);
 }
 
+h1 > .queue-text {
+  margin: 0;
+  font-size: 1em;
+  color: white;
+}
+
 p {
   color: var(--highlight-color);
 }
