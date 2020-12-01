@@ -7,13 +7,13 @@ setTimeout(() => {
 }, 200);
 
 function init() {
-    tapsAddBeerNames();
-    tapsLevel();
+    tapsInfo();
+
 }
 
 
 
-function tapsAddBeerNames() { //takes the names from JSON data and add them to each tap
+function tapsInfo() { //takes the names from JSON data and add them to each tap
 
     let tapsArray = db.getTaps();
     // console.log(tapsArray)
@@ -22,23 +22,10 @@ function tapsAddBeerNames() { //takes the names from JSON data and add them to e
     for (let i = 0; i < tapsArray.length; i++) {
         const clone = template.cloneNode(true);
         clone.querySelector(".beer-name").textContent = tapsArray[i].beer;
+        clone.querySelector(".tap-levelbar-fill").style.height = (tapsArray[i].level / 2500) * 100 + "%"; //sets the height of the fill div in relation to the level
         document.querySelector(".wrapper-taps").appendChild(clone);
-    }
+        console.log(tapsArray[i].beer, tapsArray[i].level)
 
-
-
-
-
-}
-
-function tapsLevel() { //takes the tap level from JSON data and fill the level bar
-    let tapsLevel = db.getTaps();
-    const template = document.querySelector("#tap-template").content;
-
-    for (let i = 0; i < tapsLevel.length; i++) {
-        const clone = template.cloneNode(true);
-        document.querySelector(".tap-levelbar-fill").style.height = (tapsLevel[i].level / 2500) * 100 + "%"; //sets the height of the fill div in relation to the level
-        console.log(tapsLevel[i].beer, tapsLevel[i].level)
 
     }
 }
