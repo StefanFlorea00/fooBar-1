@@ -1,24 +1,26 @@
+"use strict";
+
 let extended = false;
 
-const templateSource = "#storage-template";
-const templateDestination = "";
+const TEMPLATE_SOURCE = "#storage-template";
+const TEMPLATE_DESTINATION = ".wrapper-storage";
 
 export function init(data){
     console.log(data);
 
-    if(document.querySelector(".wrapper-storage").classList.contains("extended")){
+    if(document.querySelector(TEMPLATE_DESTINATION).classList.contains("extended")){
         extended = true;
     } else 
     extended = false;
 
-    clearPreviousBeers(".wrapper-storage");
+    clearPreviousBeers(TEMPLATE_DESTINATION);
     addBeers(data);
 }
 
 function addBeers(data){
     let storageArray = data;
     for(let beer of storageArray){
-        addBeerTemplate("#storage-template", ".wrapper-storage", beer.name, beer.amount, extended);
+        addBeerTemplate(TEMPLATE_SOURCE, TEMPLATE_DESTINATION, beer.name, beer.amount, extended);
     }
 }
 

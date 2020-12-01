@@ -1,7 +1,10 @@
-let extended = false;
+"use strict";
+
+const TEMPLATE_SOURCE = "#client-template";
+const TEMPLATE_DESTINATION = "#serving-wrapper";
 
 export function init(data){
-    clearPreviousQueue("#serving-wrapper");
+    clearPreviousQueue(TEMPLATE_DESTINATION);
     addServingLength(data);
     addCustomer(data);
 }
@@ -9,7 +12,7 @@ export function init(data){
 function addCustomer(data){
     let servingArray = data;
     for(let client of servingArray){
-        addClientTemplate("#client-template", "#serving-wrapper", client.id, client.order);
+        addClientTemplate(TEMPLATE_SOURCE, TEMPLATE_DESTINATION, client.id, client.order);
     }
 }
 

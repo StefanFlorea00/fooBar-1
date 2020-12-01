@@ -1,4 +1,5 @@
 "use strict";
+
 const url = "https://foobarserver.herokuapp.com/"
 
 const restDbUrl = "https://foobar-ad40.restdb.io/rest/queue"; //RestDB url link for POSTing to queue

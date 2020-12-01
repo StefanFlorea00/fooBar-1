@@ -8,6 +8,8 @@ import * as queue from "../modules/queue.mjs";
 import * as serving from "../modules/serving.mjs";
 import * as hours from "../modules/hours.mjs";
 
+const UPDATE_INTERVAL = 5000; //in ms
+
 //***IF YOU TRY TO GET DATA FROM DB AT START OF PAGE */
 //***IT WILL BE EMPTY BECAUSE IT TRIES TO GET DATA BEFORE FETCHING */
 
@@ -17,7 +19,7 @@ setTimeout(updateComponents, 100);
 setInterval(() => {
     db.get(db.prepareData);
     updateComponents();
-}, 5000);
+}, UPDATE_INTERVAL);
 
 
 function updateComponents() {

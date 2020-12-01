@@ -1,3 +1,4 @@
+"use strict";
 
 export function init(data, data2){
     console.log(data, data2);
