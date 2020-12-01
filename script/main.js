@@ -14,11 +14,13 @@ const UPDATE_INTERVAL = 5000; //in ms
 //***IT WILL BE EMPTY BECAUSE IT TRIES TO GET DATA BEFORE FETCHING */
 
 db.get(db.prepareData);
+updateTimer();
 setTimeout(updateComponents, 100);
 
 setInterval(() => {
     db.get(db.prepareData);
     updateComponents();
+    updateTimer();
 }, UPDATE_INTERVAL);
 
 
@@ -31,4 +33,13 @@ function updateComponents() {
         serving.init(db.getServing());
         hours.init(db.getClosingTime());
     }, 100);
+}
+
+function updateTimer(){
+    document.querySelector(".update-timer-fill").classList.remove("fill-anim");
+    void document.querySelector(".update-timer-fill").offsetWidth;
+
+    document.querySelector(".update-timer-fill").classList.add("fill-anim");
+    document.querySelector(".fill-anim").style.animationDuration = UPDATE_INTERVAL / 1000 + "s";
+
 }
