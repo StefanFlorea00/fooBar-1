@@ -10,11 +10,13 @@ function changeSection(e){
 
 
     document.querySelectorAll("main > section").forEach(section=> {
-
-        if(section.id!=activeSection){
-            section.classList.add("hidden");
-        } else {
+        console.warn(section.id, "active: " + activeSection)
+        if(section.id==activeSection){
+            console.log("add")
             section.classList.remove("hidden");
+        } else {
+            console.warn("hide");
+            section.classList.add("hidden");
         }
     })
 

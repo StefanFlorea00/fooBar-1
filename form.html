@@ -27,7 +27,7 @@
             <div class="beer-wrapper">
                 <img class="beer-img" src="assets/beer-glass.png">
                 <div class="beer-text-wrapper">
-                    <h1>El hefe</h1>
+                    <h2>El hefe</h2>
                     <p class="beer-stats"><span>IPA</span> * <span>7.9%</span></p>
                     <p class="beer-desc">Refrenhing beer is so good i like it a lot ahahahah</p>
                     <button class="primary-btn active">Learn more</button>
@@ -38,18 +38,34 @@
                     <button class="order-btn">-</button>
                 </div>
                 <section class="learn-more-section hidden">
-                    <h2>Aroma</h2>
+                    <h3>Aroma</h3>
                     <p>AHAHAHAH</p>
-                    <h2>Appearance</h2>
+                    <h3>Appearance</h3>
                     <p>AHAHAHAH</p>
-                    <h2>Flavour</h2>
+                    <h3>Flavour</h3>
                     <p>AHAHAHAH</p>
                 </section>
             </div>
         </section>
-        <section id="quick-order hidden"></section>
-        <section id="payment hidden"></section>
-        <section id="cart hidden"></section>
+        <section class="hidden" id="order">
+            <h1 class="">YOUR LAST ORDER</h1>
+            <div class="beer-wrapper quick">
+                <img class="beer-img" src="assets/beer-glass.png">
+                <div class="beer-text-wrapper">
+                    <h2>El hefe</h2>
+                    <p class="beer-stats"><span>IPA</span> * <span>7.9%</span></p>
+                </div>
+                <div class="order-btn-wrapper">
+                    <button class="order-btn">+</button>
+                    <p class="order-amount">15</p>
+                    <button class="order-btn">-</button>
+                </div>
+            </div>
+
+
+        </section>
+        <section class="hidden" id="payment"></section>
+        <section class="hidden" id="cart"></section>
 
     </main>
 </body>
