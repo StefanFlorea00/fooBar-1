@@ -16,6 +16,10 @@
   background-color: red;
 }
 
+nav {
+  margin-top: 50px;
+}
+
 ul {
   display: flex;
   justify-content: space-evenly;
@@ -24,6 +28,10 @@ ul {
 
 li {
   list-style: none;
+}
+
+main {
+  margin-top: 75px;
 }
 
 .beer-img {
@@ -37,6 +45,11 @@ li {
   align-items: top;
   justify-content: space-around;
   flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.beer-desc {
+  width: 150px;
 }
 
 .order-btn-wrapper {
@@ -56,7 +69,9 @@ li {
 }
 
 .learn-more-btn {
-  width: 80%;
+  display: block;
+  margin: 35px auto 0 auto;
+  width: 75%;
 }
 
 .learn-more-section {
