@@ -60,7 +60,9 @@
 
         <article id="hours">
             <p class="pinned">Hours</p>
-            <h1 class="hour-display"> 01:45:00</h1>
+            <!-- <h1 class="hour-display"> 01:45:00</h1>  -->
+            <h1 class="hour-display"> <span class="hour"></span><span class="time-span">h </span><span class="minutes"></span><span class="time-span">m</span></h1>
+
             <p>until closing time</p>
         </article>
 
@@ -141,14 +143,12 @@
                     <h3 class="bartender-ontap hidden"> <span class="used">Used</span> by Peter</h3>
                     <h3 class="idle hidden"> Idle</h3>
                     <h3 class="inUse hidden"> <span>In use</span></h3>
-                    <div class="button-circle">
-                        <div class="small-ver"></div>
-                        <div class="small-hor"></div>
-
-                    </div>
-
-
+                    <div class="tap-status-circle"></div>
                 </div>
+
+
+
+            </div>
             </div>
         </template>
 

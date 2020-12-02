@@ -209,6 +209,10 @@ article:nth-child(6) {
   margin: 0;
 }
 
+.time-span {
+  color: white;
+  font-size: 0.5em;
+}
 /*bartenders*/
 
 .wrapper-bartenders {
@@ -402,7 +406,7 @@ h2 .hidden {
   color: var(--highlight-color);
 }
 
-/* taps extanded*/
+/* taps extended*/
 
 .flex {
   justify-content: space-between;
@@ -428,6 +432,21 @@ h2 .hidden {
 
 .extanded-tap > h3 > span {
   color: var(--highlight-color);
+}
+
+.tap-status-circle {
+  opacity: 80%;
+  height: 15px;
+  width: 15px;
+  border-radius: 100%;
+}
+
+.idle-green {
+  background-color: rgb(99, 158, 99);
+}
+
+.inUse-red {
+  background-color: rgb(255, 121, 121);
 }
 
 .button-circle {

@@ -18,7 +18,6 @@ export function init(data) {
     clearPreviousTaps(TEMPLATE_DESTINATION);
     tapsInfo(data);
 
-    console.log(extended);
 }
 
 function tapsInfo(data) { //takes the names from JSON data and add them to each tap
@@ -42,8 +41,10 @@ function tapsInfo(data) { //takes the names from JSON data and add them to each 
         // Showing which tap is in use/idle
         if (tapsArray[i].inUse) {
             clone.querySelector(".inUse").classList.remove("hidden");
+            clone.querySelector(".tap-status-circle").classList.add("inUse-red");
         } else {
             clone.querySelector(".idle").classList.remove("hidden");
+            clone.querySelector(".tap-status-circle").classList.add("idle-green");
         }
         document.querySelector(TEMPLATE_DESTINATION).appendChild(clone);
 
