@@ -5,62 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="form-style.css">
-</head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet"></head>
 <body>
     <div class="menu-wrapper">
-        <div class="burger-menu"></div>
+        <img class="menu-icon" src="assets/menu.png"></img>
         <h1>FooBar</h1>
-        <div class="search"></div>
+        <img class="menu-icon" src="assets/loupe.png"></img>
     </div>
     <nav>
         <ul>
-            <li>Beers</li>
-            <li>Quick order</li>
-            <li>Payment</li>
-            <li>Chart</li>
+            <li class="primary-btn" id="beers-btn">Beers</li>
+            <li class="primary-btn active" id="order-btn">Quick order</li>
+            <li class="primary-btn" id="payment-btn">Payment</li>
+            <li class="primary-btn" id="cart-btn">Cart</li>
         </ul>
     </nav>
     
     <main>
-        <div class="beer-wrapper">
-            <img class="beer-img" src="">
-            <div class="beer-text-wrapper">
-                <h1>El hefe</h1>
-                <p><span>IPA</span> * <span>7.9%</span></p>
-                <p class="beer-desc">Refrenhing beer is so good i like it a lot ahahahah</p>
-                <button class="learn-more-btn">Learn more</button>
+        <section id="beers">
+            <div class="beer-wrapper">
+                <img class="beer-img" src="assets/beer-glass.png">
+                <div class="beer-text-wrapper">
+                    <h1>El hefe</h1>
+                    <p class="beer-stats"><span>IPA</span> * <span>7.9%</span></p>
+                    <p class="beer-desc">Refrenhing beer is so good i like it a lot ahahahah</p>
+                    <button class="primary-btn active">Learn more</button>
+                </div>
+                <div class="order-btn-wrapper">
+                    <button class="order-btn">+</button>
+                    <p class="order-amount">15</p>
+                    <button class="order-btn">-</button>
+                </div>
+                <section class="learn-more-section hidden">
+                    <h2>Aroma</h2>
+                    <p>AHAHAHAH</p>
+                    <h2>Appearance</h2>
+                    <p>AHAHAHAH</p>
+                    <h2>Flavour</h2>
+                    <p>AHAHAHAH</p>
+                </section>
+            </div>
+        </section>
+        <section id="quick-order hidden"></section>
+        <section id="payment hidden"></section>
+        <section id="cart hidden"></section>
 
-            </div>
-            <div class="order-btn-wrapper">
-                <button class="order-btn">+</button>
-                <p class="order-amount">15</p>
-                <button class="order-btn">-</button>
-            </div>
-            <section class="learn-more-section">
-                <p>AHAHAHAH</p>
-                <p>AHAHAHAH</p>
-                <p>AHAHAHAH</p>
-            </section>
-        </div>
-        <div class="beer-wrapper">
-            <div class="order-btn-wrapper">
-                <button class="order-btn">+</button>
-                <p class="order-amount">15</p>
-                <button class="order-btn">-</button>
-            </div>
-            <div class="beer-text-wrapper">
-                <h1>El hefe</h1>
-                <p><span>IPA</span> * <span>7.9%</span></p>
-                <p class="beer-desc">Refrenhing beer is so good i like it a lot ahahahah</p>
-                <button class="learn-more-btn">Learn more</button>
-            </div>
-            <img class="beer-img" src="">
-            <section class="learn-more-section">
-                <p>AHAHAHAH</p>
-                <p>AHAHAHAH</p>
-                <p>AHAHAHAH</p>
-            </section>
-        </div>
     </main>
 </body>
 <script src="script/form.js"></script>
