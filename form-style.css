@@ -1,0 +1,64 @@
+.menu-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.burger-menu {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+
+.search {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.beer-img {
+  width: 100px;
+  height: 250px;
+  background-color: red;
+}
+
+.beer-wrapper {
+  display: flex;
+  align-items: top;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.order-btn-wrapper {
+  display: flex;
+  flex-flow: column;
+  align-self: center;
+}
+
+.order-btn {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.order-amount {
+  text-align: center;
+}
+
+.learn-more-btn {
+  width: 80%;
+}
+
+.learn-more-section {
+  width: 90%;
+}
