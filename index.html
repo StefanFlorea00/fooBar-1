@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;1,700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
@@ -18,7 +21,7 @@
         <img src="assets/127762169_3794020370650367_4527048431329382281_n.png" alt="bar logo">
         <ul>
             <li>
-                <div class="nav_container">QUEUE</div>
+                QUEUE
             </li>
             <li>SERVING</li>
             <li>BARTENDER</li>
@@ -40,7 +43,7 @@
 
             <template id="client-template">
                 <div class="individual-client">
-                    <img src="assets/customer_final.png" alt="" class="client-logo">
+                    <img src="assets/customer_blue.png" alt="" class="client-logo">
                     <div class="order-queue">
                         <h3>Customer#<span>Id</span></h3>
                         <ul>
@@ -127,7 +130,7 @@
         <template id="tap-template">
             <div class="flex">
                 <div class="tap-wrapper">
-                    <img src="assets/white-tap.png" alt="white-tap">
+                    <img class="beer-tap-svg" src="assets/beer-tap.svg" alt="white-tap">
                     <div class="bar-tap">
                         <div class="tap-levelbar-container">
                             <div class="tap-levelbar-fill"></div>
@@ -141,12 +144,6 @@
                     <h3 class="bartender-ontap hidden"> <span class="used">Used</span> by Peter</h3>
                     <h3 class="idle hidden"> Idle</h3>
                     <h3 class="inUse hidden"> <span>In use</span></h3>
-                    <div class="button-circle">
-                        <div class="small-ver"></div>
-                        <div class="small-hor"></div>
-
-                    </div>
-
 
                 </div>
             </div>
