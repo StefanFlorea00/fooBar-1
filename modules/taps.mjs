@@ -3,9 +3,22 @@
 const TEMPLATE_SOURCE  = "#tap-template";
 const TEMPLATE_DESTINATION = ".wrapper-taps";
 
+let extended = false;
+
 export function init(data) {
+
+
+    if(document.querySelector(".wrapper-taps").classList.contains("extended")){
+        extended = true;
+    } else
+    extended = false;
+    console.warn(extended);
+
+
     clearPreviousTaps(TEMPLATE_DESTINATION);
     tapsInfo(data);
+
+    console.log(extended);
 }
 
 function tapsInfo(data) { //takes the names from JSON data and add them to each tap
@@ -13,6 +26,11 @@ function tapsInfo(data) { //takes the names from JSON data and add them to each 
     let tapsArray = data;
     // console.log(tapsArray)
     const template = document.querySelector(TEMPLATE_SOURCE).content;
+
+    if(extended){
+        template.querySelector(".extanded-tap").classList.remove("collapsed");
+    } else
+    template.querySelector(".extanded-tap").classList.add("collapsed");
 
     for (let i = 0; i < tapsArray.length; i++) {
         const clone = template.cloneNode(true);

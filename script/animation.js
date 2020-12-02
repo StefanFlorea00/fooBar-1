@@ -34,9 +34,7 @@ bartenders.addEventListener("click", () => {
     activities.forEach(activity => activity.classList.toggle("collapsed"))
 })
 
-const arrayTaps = _.toArray(individualTaps);
-
 taps.addEventListener("click", () => {
-    console.log(arrayTaps);
-    arrayTaps.forEach(tap => tap.classList.toggle("collapsed"));
+    document.querySelector(".wrapper-taps").classList.toggle("extended");
+    document.querySelectorAll(".extanded-tap").forEach(tap => tap.classList.toggle("collapsed"))
 })
