@@ -48,7 +48,7 @@
             </div>
         </section>
         <section class="hidden" id="order">
-            <h1 class="">YOUR LAST ORDER</h1>
+            <h1 class="section-header">WE RECOMMEND</h1>
             <div class="beer-wrapper quick">
                 <img class="beer-img" src="assets/beer-glass.png">
                 <div class="beer-text-wrapper">
@@ -61,11 +61,73 @@
                     <button class="order-btn">-</button>
                 </div>
             </div>
-
+            <div class="beer-wrapper quick">
+                <img class="beer-img" src="assets/beer-glass.png">
+                <div class="beer-text-wrapper">
+                    <h2>El hefe</h2>
+                    <p class="beer-stats"><span>IPA</span> * <span>7.9%</span></p>
+                </div>
+                <div class="order-btn-wrapper">
+                    <button class="order-btn">+</button>
+                    <p class="order-amount">15</p>
+                    <button class="order-btn">-</button>
+                </div>
+            </div>      
+            <div class="order-total">
+                <p>TOTAL</p>
+                <h2><span>35,50</span> DKK</h2>
+                <button class="primary-btn active">Order again</button>
+            </div>
+        </section>
+        <section class="hidden" id="payment">
+            <h1 class="section-header">PAYMENT METHOD</h1>
+            <p>Set-up your preferred method of paying</p>
+            <div class="payment-options">
+                <div>
+                <input type="radio" id="payment-mobilepay" name="payment" value="mobilepay" checked>
+                <label for="payment-mobilepay"><img src="assets/mobilepay.png"> MobilePay</label>
+            </div>
+            <div>
+                <input type="radio" id="payment-card" name="payment" value="card" checked>
+                <label for="payment-card"><img src="assets/card.png">Card</label>
+            </div>
+            <div>
+                <input type="radio" id="payment-cash" name="payment" value="cash" checked>
+                <label for="payment-cash"><img src="assets/cash.png">Cash</label>
+            </div>
+              </div>
+        <h1 class="section-header">CREDIT CARDS</h1>
+        </section>
+        <section class="hidden" id="cart">
+            <h1 class="section-header">YOUR ORDER</h1>
+            <div class="beer-wrapper quick">
+                <img class="beer-img" src="assets/beer-glass.png">
+                <div class="beer-text-wrapper">
+                    <h2>El hefe</h2>
+                    <p class="beer-stats"><span>IPA</span> * <span>7.9%</span></p>
+                </div>
+                <div class="order-btn-wrapper">
+                    <button class="order-btn">+</button>
+                    <p class="order-amount">15</p>
+                    <button class="order-btn">-</button>
+                </div>
+            </div>
+            <div class="beer-wrapper quick">
+                <img class="beer-img" src="assets/beer-glass.png">
+                <div class="beer-text-wrapper">
+                    <h2>El hefe</h2>
+                    <p class="beer-stats"><span>IPA</span> * <span>7.9%</span></p>
+                </div>
+                <div class="order-btn-wrapper">
+                    <button class="order-btn">+</button>
+                    <p class="order-amount">15</p>
+                    <button class="order-btn">-</button>
+                </div>
+            </div>
+            <h1 class="section-header">PAYMENT</h1>
+            <button class="primary-btn active">Confirm Order</button>
 
         </section>
-        <section class="hidden" id="payment"></section>
-        <section class="hidden" id="cart"></section>
 
     </main>
 </body>

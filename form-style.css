@@ -2,7 +2,7 @@
   --primary-color: #566ebb;
   --sec-color: #102567;
   --order-btn-color: #a5a5a5;
-  --gray-text: #808080;
+  --gray-text: #999999;
 }
 
 * {
@@ -28,6 +28,7 @@ h1 {
 
 main {
   padding: 0 15px;
+  margin-top: 50px;
 }
 
 /* MENU */
@@ -56,10 +57,6 @@ ul {
 
 li {
   list-style: none;
-}
-
-main {
-  margin-top: 75px;
 }
 
 .primary-btn {
@@ -98,7 +95,9 @@ main {
 }
 
 .beer-img {
-  width: 125px;
+  object-fit: cover;
+  height: 200px;
+  width: 90px;
 }
 
 .beer-wrapper {
@@ -158,15 +157,15 @@ main {
 
 /* QUICK ORDER */
 
-#order h1 {
+.section-header {
   position: relative;
   color: var(--gray-text);
   font-size: 35px;
   font-weight: 300;
-  margin-left: 10px;
+  /* margin-left: 10px; */
 }
 
-#order h1:after {
+.section-header:after {
   position: absolute;
   content: "";
   background: var(--gray-text);
@@ -191,4 +190,56 @@ main {
 
 .quick .beer-text-wrapper {
   margin-left: 15px;
+}
+
+.quick h2 {
+  font-size: 45px;
+}
+
+.order-total {
+  text-align: right;
+  margin-top: 30px;
+}
+
+.order-total p {
+  margin: 0;
+  color: var(--sec-color);
+  font-size: 20px;
+}
+
+.order-total h2 {
+  margin: 0 0 20px 0;
+  color: var(--sec-color);
+  font-size: 50px;
+}
+
+.order-total button {
+  font-size: 25px;
+}
+
+/* PAYMENT */
+
+.payment-options {
+  display: flex;
+  flex-flow: column;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--gray-text);
+}
+
+.payment-options div {
+  display: flex;
+  align-items: center;
+}
+
+.payment-options label {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.payment-options label img {
+  margin-right: 10px;
+  width: 75px;
 }
