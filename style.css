@@ -533,4 +533,9 @@ h2 .hidden {
     height: 100%;
     justify-self: center;
   }
+
+  .centered {
+    max-width: auto;
+    margin-left: auto;
+  }
 }
