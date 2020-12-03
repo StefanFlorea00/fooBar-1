@@ -176,9 +176,18 @@ article:nth-child(6) {
   padding: 1em;
 }
 
-.hour-display {
+#hour-display {
   color: var(--highlight-color);
-  font-size: 5rem;
+}
+
+#hour-display > .hour, #hour-display > .minutes {
+  color: var(--highlight-dark);
+
+}
+
+.time-span {
+  color: var(--highlight-color);
+  font-size: 1em;
 }
 
 .hour-display + p {
