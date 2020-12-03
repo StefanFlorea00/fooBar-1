@@ -532,10 +532,18 @@ h2 .hidden {
     max-height: 100px;
     height: 100%;
     justify-self: center;
+  }}
+
+  @media only screen and (max-width: 500px) {
+    .centered {
+      max-width: 100vw;
+      margin-left: auto;
+    }
   }
 
-  .centered {
-    max-width: auto;
-    margin-left: auto;
+  @media screen and (max-width: 845px) and (min-width: 465px) {
+    nav > ul {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      }
   }
-}
