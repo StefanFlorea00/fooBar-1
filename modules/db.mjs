@@ -21,7 +21,7 @@ export function prepareData(data) {
 };
 
 // POST TO DB
-function post(){
+function post() {
     const dataToPost = {
         numberOfPeople: queueLength
     };
@@ -41,37 +41,36 @@ function post(){
 }
 
 export function showData(data) {
-    console.log(data);
 };
 
-export function getBar(){
+export function getBar() {
     return rootData.bar;
 }
 
-export function getQueue(){
+export function getQueue() {
     return rootData.queue;
 }
 
-export function getServing(){
+export function getServing() {
     return rootData.serving;
 }
 
-export function getBartenders(){
+export function getBartenders() {
     return rootData.bartenders;
 }
 
-export function getTaps(){
+export function getTaps() {
     return rootData.taps;
 }
 
-export function getStorage(){
+export function getStorage() {
     return rootData.storage;
 }
 
-export function getQueueLength(){
+export function getQueueLength() {
     return rootData.queue.length;
 }
 
-export function getClosingTime(){
+export function getClosingTime() {
     return rootData.bar.closingTime;
 }

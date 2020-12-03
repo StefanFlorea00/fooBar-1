@@ -18,7 +18,6 @@ export function init(data) {
     clearPreviousTaps(TEMPLATE_DESTINATION);
     tapsInfo(data);
 
-    console.log(extended);
 }
 
 function tapsInfo(data) { //takes the names from JSON data and add them to each tap

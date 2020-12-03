@@ -28,7 +28,6 @@ storage.addEventListener("click", () => {
 })
 
 const activities = _.toArray(activity);
-console.log(activities);
 
 bartenders.addEventListener("click", () => {
     activities.forEach(activity => activity.classList.toggle("collapsed"))

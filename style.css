@@ -87,6 +87,14 @@ nav > ul > li:hover {
   border-radius: 40px;
 }
 
+.active {
+  color: var(--highlight-color);
+  cursor: pointer;
+  background-color: var(--highlight-color);
+  color: white; 
+  border-radius: 40px;
+}
+
 nav > img {
   width: 80%;
   margin: 1rem;
@@ -98,6 +106,8 @@ nav > img:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
+
+
 
 
 .hidden {
@@ -147,6 +157,10 @@ article:hover {
   box-shadow: 9px 10px 18px -7px #000000;
 }
 
+.centered {
+  max-width: 50vw;
+  margin-left: 25vw;
+}
 /* HERE IS THE COOL SHIT */
 
 article:nth-child(2),

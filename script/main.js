@@ -7,6 +7,7 @@ import * as taps from "../modules/taps.mjs";
 import * as queue from "../modules/queue.mjs";
 import * as serving from "../modules/serving.mjs";
 import * as hours from "../modules/hours.mjs";
+import * as navbar from "../modules/navbar.mjs";
 
 const UPDATE_INTERVAL = 5000; //in ms
 
@@ -27,7 +28,7 @@ setInterval(() => {
 function updateComponents() {
     setTimeout(() => {
         storage.init(db.getStorage());
-        bartenders.init(db.getBartenders(),db.getServing());
+        bartenders.init(db.getBartenders(), db.getServing());
         taps.init(db.getTaps());
         queue.init(db.getQueue(), db.getQueueLength());
         serving.init(db.getServing());
@@ -35,7 +36,7 @@ function updateComponents() {
     }, 100);
 }
 
-function updateTimer(){
+function updateTimer() {
     document.querySelector(".update-timer-fill").classList.remove("fill-anim");
     void document.querySelector(".update-timer-fill").offsetWidth;
 
