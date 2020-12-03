@@ -259,7 +259,7 @@ article:nth-child(6) {
   display: grid;
   grid:
     auto-flow minmax(80px, auto) /
-    repeat(auto-fit, minmax(clamp(33.3333% - 1rem, 250px, 100%), 1fr));
+    repeat(auto-fit, minmax(clamp(33.3333% - 1rem, 275px, 100%), 1fr));
   padding-top: 2em;
 }
 
@@ -285,9 +285,11 @@ h2 .hidden {
 
 .keg-amount {
   color: #7198CA;
-  margin-left: auto;
   font-size: 2em;
   font-weight: 700;
+
+  margin-left: auto;
+  padding-right: 1em;
 }
 
 .kegs > img {
