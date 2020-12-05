@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;1,700&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
@@ -17,8 +18,7 @@
 </head>
 
 <body>
-    <nav>
-        <img src="assets/127762169_3794020370650367_4527048431329382281_n.png" alt="bar logo">
+    <nav id="dashboard-nav">
         <ul>
             <li data-article="queue">QUEUE</li>
             <li data-article="serving">SERVING</li>
@@ -26,12 +26,20 @@
             <li data-article="ontap">ON TAP</li>
             <li data-article="storage">STORAGE</li>
             <li data-article="hours">HOURS</li>
-        </ul>
+            <img src="assets/setting_wheel3.svg" alt="settings wheel" class="settings-button">
 
-        <div class="ver"></div>
+        </ul>
     </nav>
 
-    <section>
+    <nav id="settings-nav" class="hidden">
+        <ul>
+            <div class="arrow-back left hidden"></div>
+            <img src="assets/home.svg" alt="settings wheel" class="home-button">
+        </ul>
+    </nav>
+
+    <!-- Dashboard and everything related -->
+    <section id="dashboard">
         <article id="queue">
             <p class="pinned">QUEUE</p>
             <h1><span class="queue-number"> 4 </span><span class="queue-text">PEOPLE IN QUEUE</span></h1>
@@ -157,10 +165,114 @@
 
     </section>
 
+    <!-- Setting page and everything related -->
+    <section id="settings" class="hidden">
+        <article id="login">
+            <h1>Login</h1>
+            <div class="arrow right"></div>
 
-    <div class="update-timer">
+        </article>
+
+        <article id="layout">
+            <h1>Layout</h1><i class="arrow right"></i>
+
+        </article>
+
+        <article id="theme">
+            <h1>Theme</h1><i class="arrow right"></i>
+
+        </article>
+    </section>
+
+    <!-- Login and everything related -->
+    <section id="login-section" class="hidden"></section>
+
+    <!-- Login and everything related -->
+    <section id="layout-section" class="hidden">
+
+        <div class="wrapper-settings">
+            <h1>Components' Order</h1>
+            <div class="form-order">
+                <form>
+                    <label for="queue">Queue
+                        <select id="queue" name="queue-order">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select></label>
+
+                    <label for="queue">Serving
+                        <select id="queue" name="queue-order">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select></label>
+
+                    <label for="queue">Hours
+                        <select id="queue" name="queue-order">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select></label>
+
+                    <label for="queue">Bartenders
+                        <select id="queue" name="queue-order">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select></label>
+
+                    <label for="queue">On tap
+                        <select id="queue" name="queue-order">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select></label>
+
+                    <label for="queue">Storage
+                        <select id="queue" name="queue-order">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select></label>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="wrapper-settings">
+            <h1>Layout Style</h1>
+            <div class="form-order">
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- Login and everything related -->
+    <section id="theme-section" class="hidden"></section>
+
+    <!--     <div class="update-timer">
         <div class="update-timer-fill"></div>
-    </div>
+    </div> -->
 </body>
 <script src="script/animation.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>

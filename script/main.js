@@ -8,6 +8,7 @@ import * as queue from "../modules/queue.mjs";
 import * as serving from "../modules/serving.mjs";
 import * as hours from "../modules/hours.mjs";
 import * as navbar from "../modules/navbar.mjs";
+import * as settings from "../modules/settings.mjs";
 
 const UPDATE_INTERVAL = 5000; //in ms
 
@@ -15,13 +16,13 @@ const UPDATE_INTERVAL = 5000; //in ms
 //***IT WILL BE EMPTY BECAUSE IT TRIES TO GET DATA BEFORE FETCHING */
 
 db.get(db.prepareData);
-updateTimer();
+//updateTimer();
 setTimeout(updateComponents, 100);
 
 setInterval(() => {
     db.get(db.prepareData);
     updateComponents();
-    updateTimer();
+    //updateTimer();
 }, UPDATE_INTERVAL);
 
 
@@ -36,11 +37,11 @@ function updateComponents() {
     }, 100);
 }
 
-function updateTimer() {
+/* function updateTimer() {
     document.querySelector(".update-timer-fill").classList.remove("fill-anim");
     void document.querySelector(".update-timer-fill").offsetWidth;
 
     document.querySelector(".update-timer-fill").classList.add("fill-anim");
     document.querySelector(".fill-anim").style.animationDuration = UPDATE_INTERVAL / 1000 + "s";
 
-}
+} */

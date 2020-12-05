@@ -51,6 +51,32 @@ p {
   color: var(--highlight-color);
 }
 
+/* setting the order for everything */ 
+
+#queue {
+  order: 1;
+}
+
+#serving {
+  order:2;
+}
+
+#hours {
+  order: 3;
+}
+
+#bartenders {
+  order: 4;
+}
+
+#storage {
+  order: 5;
+}
+
+#ontap {
+  order: 6;
+}
+
 /* styling for the navigation bar */
 
 nav {
@@ -67,7 +93,6 @@ nav > ul {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-
 }
 
 nav > ul > li {
@@ -87,6 +112,18 @@ nav > ul > li:hover {
   border-radius: 40px;
 }
 
+nav > ul > img {
+  max-height: 40px;
+  align-self: center;
+  grid-column: -1;
+  grid-row: -1;
+}
+
+nav > ul > img:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
 .active {
   color: var(--highlight-color);
   cursor: pointer;
@@ -95,17 +132,6 @@ nav > ul > li:hover {
   border-radius: 40px;
 }
 
-nav > img {
-  width: 80%;
-  margin: 1rem;
-  border-radius: 10px;
-  display:none;
-}
-
-nav > img:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-}
 
 
 
@@ -499,6 +525,114 @@ h2 .hidden {
   }
   to {
     width: 100%;
+  }
+}
+
+
+/* working on the settings */ 
+
+#settings-nav {
+  margin-top: 1em;
+}
+#settings {
+  flex-flow: column wrap;
+  padding-top: 1em;
+}
+
+#settings > article > h1 {
+  color: var(--highlight-color);
+}
+
+#settings > article {
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  border: solid var(--highlight-dark);
+  border-width: 0 2px 2px 0;
+  height: 15px;
+  width: 15px;
+}
+
+.arrow-back {
+  border: solid var(--highlight-color);
+  border-width: 0 2px 2px 0;
+  height: 20px;
+  width: 20px;
+
+  transform: rotate(140deg);
+  position: fixed;
+  top: 1.5em;
+  left: 30px;
+
+}
+
+.arrow-back:hover {
+  cursor: pointer;
+  transform: rotate(140deg) scale(1.2);
+}
+
+.right {
+  transform: rotate(-45deg);
+}
+
+#layout-section, #theme-section, #login-section {
+  flex-flow: column wrap;
+}
+
+/* layout settings */ 
+
+.wrapper-settings {
+  margin-top: 20px;
+}
+
+.wrapper-settings > h1 {
+  color: var(--highlight-color);
+  border: solid var(--highlight-color);
+  border-width: 0 0 1px 0; 
+  font-weight: 300;
+  padding-left: 0.5em;
+}
+
+form {
+  display: grid;
+  justify-content: space-between;
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 0;
+  color: var(--highlight-color)
+}
+
+label > select {
+  margin-left: 2em;
+  color: var(--highlight-dark);
+}
+
+@media only screen and (min-width: 800px) {
+  .wrapper-settings {
+    margin: 10px 20vw; 
+  } 
+
+  .wrapper-settings > h1 {
+    padding-left: 0px;
+  }
+
+  label {
+    font-size: 2em;
+    align-items: center;
+  }
+
+  label > select {
+    border: none;
+    border-radius: 10px;
+    width: 40px;
+    height: 30px;
+    text-align: center;
   }
 }
 
