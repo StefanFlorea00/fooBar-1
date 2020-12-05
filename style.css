@@ -598,7 +598,10 @@ h2 .hidden {
 
 form {
   display: grid;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin: 1em;
+  grid-template-columns: repeat(2, auto);
+
 }
 
 label {
