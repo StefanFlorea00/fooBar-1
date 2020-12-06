@@ -191,12 +191,27 @@
     <section id="layout-section" class="hidden">
 
         <div class="wrapper-settings">
+            <h1>Layout Style</h1>
+            <div>
+                <form class="form-layout">
+                    <label for="layout-choice"> What layout would suit you best?
+                        <select id="layout-choice" name="layout-choice">
+                            <option value="fit-to-line">Fit to line</option>
+                            <option value="fit-to-column">Fit to column</option>
+                            <option value="grid-layout">Grid layout</option>
+                        </select>
+                    </label>
+
+                    <img src="" alt="">
+                </form>
+            </div>
+
             <h1>Components' Order</h1>
             <div class="form-order">
-                <form>
-                    <label for="queue">Queue
-                        <select id="queue" name="queue-order">
-                            <option value="1">1</option>
+                <form class="form-for-order">
+                    <label for="queue-order">Queue
+                        <select class="order-select" id="queue-order" name="queue-order">
+                            <option value="1" selected>1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
@@ -204,66 +219,61 @@
                             <option value="6">6</option>
                         </select></label>
 
-                    <label for="queue">Serving
-                        <select id="queue" name="queue-order">
+                    <label for="serving-order">Serving
+                        <select class="order-select" id="serving-order" name="serving-order">
                             <option value="1">1</option>
-                            <option value="2">2</option>
+                            <option value="2" selected>2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
                             <option value="6">6</option>
                         </select></label>
 
-                    <label for="queue">Hours
-                        <select id="queue" name="queue-order">
+                    <label for="hours-label">Hours
+                        <select class="order-select" id="hours-label" name="hours-order">
                             <option value="1">1</option>
                             <option value="2">2</option>
-                            <option value="3">3</option>
+                            <option value="3" selected>3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
                             <option value="6">6</option>
                         </select></label>
 
-                    <label for="queue">Bartenders
-                        <select id="queue" name="queue-order">
+                    <label for="bartenders-order">Bartenders
+                        <select class="order-select" id="bartenders-order" name="bartenders-order">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
-                            <option value="4">4</option>
+                            <option value="4" selected>4</option>
                             <option value="5">5</option>
                             <option value="6">6</option>
                         </select></label>
 
-                    <label for="queue">On tap
-                        <select id="queue" name="queue-order">
+                    <label for="storage-order">Storage
+                        <select class="order-select" id="storage-order" name="storage-order">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
-                            <option value="5">5</option>
+                            <option value="5" selected>5</option>
                             <option value="6">6</option>
                         </select></label>
 
-                    <label for="queue">Storage
-                        <select id="queue" name="queue-order">
+                    <label for="ontap-order">On tap
+                        <select class="order-select" id="ontap-order" name="ontap-order">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
-                            <option value="6">6</option>
+                            <option value="6" selected>6</option>
                         </select></label>
 
                 </form>
             </div>
-        </div>
 
-        <div class="wrapper-settings">
-            <h1>Layout Style</h1>
-            <div class="form-order">
-            </div>
+            <input type="button" value="Save changes" id="save-changes"></input>
         </div>
-
 
     </section>
 

@@ -333,7 +333,7 @@ h2 .hidden {
 
 .wrapper-taps {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+
   justify-content: space-between;
   padding: 0.5em;
   grid-gap: 15px;
@@ -585,6 +585,8 @@ h2 .hidden {
 /* layout settings */ 
 
 .wrapper-settings {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
   margin-top: 20px;
 }
 
@@ -596,27 +598,71 @@ h2 .hidden {
   padding-left: 0.5em;
 }
 
-form {
+.form-for-order {
   display: grid;
-  justify-content: space-around;
   margin: 1em;
-  grid-template-columns: repeat(2, auto);
+  justify-content: space-around;
 
+  grid-template-columns: repeat(2, 190px);
+  grid-gap: 20px;
 }
 
 label {
+  padding: 0.5em;
+  color: var(--highlight-color);
   display: flex;
+  flex-flow: row;
   justify-content: space-between;
-  padding: 0.5em 0;
-  color: var(--highlight-color)
 }
 
 label > select {
   margin-left: 2em;
   color: var(--highlight-dark);
+  max-width: 40px;
+  width: 40px;
+  max-height: 20px;
+  border: none;
+  background-color: white;
+}
+
+.form-layout {
+  display: flex;
+  justify-content: space-between;
+  margin: 2em;
+}
+
+.form-layout > label > select {
+  max-width: 200px;
+  width: fit-content;
+}
+
+select:hover {
+  cursor: pointer;
+}
+
+#save-changes {
+
+  border: solid 1px var(--highlight-dark);
+  border-radius: 5px;
+  color: var(--highlight-dark);
+  background-color: transparent;
+  font-size: 1.2em;
+  font-family: "Lato", sans-serif;
+
+  width: fit-content;
+  justify-self: center;
+  margin-top: 2em;
+}
+
+#save-changes:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: var(--highlight-dark);
+  color: white;
 }
 
 @media only screen and (min-width: 800px) {
+
   .wrapper-settings {
     margin: 10px 20vw; 
   } 
@@ -626,8 +672,9 @@ label > select {
   }
 
   label {
-    font-size: 2em;
     align-items: center;
+    font-size: 1.3em;
+
   }
 
   label > select {
@@ -636,6 +683,11 @@ label > select {
     width: 40px;
     height: 30px;
     text-align: center;
+  }
+
+  #settings {
+    margin-left: 15vw;
+    margin-right: 15vw;
   }
 }
 
@@ -679,7 +731,7 @@ label > select {
   }
 
   @media screen and (max-width: 845px) and (min-width: 465px) {
-    nav > ul {
+    .nav-dashboard > ul {
       display: grid;
       grid-template-columns: repeat(3, auto);
       }
