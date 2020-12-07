@@ -1,3 +1,5 @@
+import { dashboard_layout } from "../modules/layout-style.mjs";
+
 const home = document.querySelector(".home-button");
 const settings = document.querySelector(".settings-button");
 
@@ -8,7 +10,7 @@ const nav_dashboard = document.querySelector("#dashboard-nav");
 const nav_settings = document.querySelector("#settings-nav");
 
 const login = document.querySelector("#login");
-const layout = document.querySelector("#layout");
+const layout_button = document.querySelector("#layout");
 const theme = document.querySelector("#theme");
 
 
@@ -16,8 +18,6 @@ settings.addEventListener("click", showingSettings);
 home.addEventListener("click", showingDashboard);
 
 function showingSettings() {
-    console.log("clicked on settings button");
-
     section_dashboard.style.display = "none";
     nav_dashboard.style.display = "none";
 
@@ -28,9 +28,21 @@ function showingSettings() {
 }
 
 function showingDashboard() {
-    console.log("clicked on home button");
 
-    section_dashboard.style.display = "flex";
+    console.log(dashboard_layout);
+
+    if (dashboard_layout == "columns") {
+        section_dashboard.style.display = "block";
+        section_dashboard.classList.add("columns");
+    }
+    else if (dashboard_layout == "grid") {
+        section_dashboard.style.display = "grid";
+        section_dashboard.classList.add("grid-dashboard");
+    }
+    else if (dashboard_layout == "flex") {
+        section_dashboard.style.display = "flex";
+    };
+
     nav_dashboard.style.display = "flex";
 
     section_settings.style.display = "none";
@@ -55,7 +67,7 @@ subsettings.push(theme_section);
 const arrow_back = document.querySelector(".arrow-back");
 arrow_back.addEventListener("click", goingBack);
 
-layout.addEventListener("click", showingLayout);
+layout_button.addEventListener("click", showingLayout);
 
 function showingLayout() {
 

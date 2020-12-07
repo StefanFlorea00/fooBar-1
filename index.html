@@ -192,7 +192,7 @@
 
         <div class="wrapper-settings">
             <h1>Layout Style</h1>
-            <div>
+            <div class="first-layout-settings">
                 <form class="form-layout">
                     <label for="layout-choice"> What layout would suit you best?
                         <select id="layout-choice" name="layout-choice">
@@ -201,9 +201,9 @@
                             <option value="grid-layout">Grid layout</option>
                         </select>
                     </label>
-
-                    <img src="" alt="">
                 </form>
+                <img src="" alt="" class="example-layout">
+
             </div>
 
             <h1>Components' Order</h1>
@@ -272,7 +272,40 @@
                 </form>
             </div>
 
-            <input type="button" value="Save changes" id="save-changes"></input>
+            <h1>Visible Components</h1>
+            <div class="form-visible">
+                <form class="form-for-showing">
+                    <label for="queue-showing">
+                        Queue<input type="checkbox" id="queue-showing" name="queue-showing" value="showing" checked>
+                    </label>
+
+                    <label for="serving-showing">Serving
+                        <input type="checkbox" id="serving-showing" name="serving-showing" value="showing" checked>
+                    </label>
+
+                    <label for="hours-showing">Hours
+                        <input type="checkbox" id="hours-showing" name="hours-showing" value="showing" checked>
+                    </label>
+
+                    <label for="bartenders-showing">Bartenders
+                        <input type="checkbox" id="bartenders-showing" name="bartenders-showing" value="showing"
+                            checked>
+                    </label>
+
+                    <label for="storage-showing">Storage
+                        <input type="checkbox" id="storage-showing" name="storage-showing" value="showing" checked>
+                    </label>
+
+                    <label for="ontap-showing">On tap
+                        <input type="checkbox" id="ontap-showing" name="ontap-showing" value="showing" checked>
+                    </label>
+
+                </form>
+            </div>
+
+            <div class="wrapper-buttons-form">
+                <input type="button" value="Reset" id="reset"></input>
+                <input type="button" value="Save changes" id="save-changes"></input></div>
         </div>
 
     </section>
