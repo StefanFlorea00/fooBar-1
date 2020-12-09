@@ -1,4 +1,5 @@
 import { dashboard_layout } from "../modules/layout-style.mjs";
+import { setDisplayBox } from "../modules/layout-style.mjs";
 
 const home = document.querySelector(".home-button");
 const settings = document.querySelector(".settings-button");
@@ -74,6 +75,8 @@ function showingLayout() {
     arrow_back.style.display = "block";
 
     layout_section.style.display = "flex";
+    setDisplayBox();
+
     section_settings.style.display = "none";
 
 }

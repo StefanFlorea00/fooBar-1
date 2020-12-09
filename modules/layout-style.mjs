@@ -6,26 +6,32 @@ if (!layout_settings) {
     layout_settings = {
         queue: {
             order: 1,
+            showing: true,
         },
 
         serving: {
             order: 2,
+            showing: true,
         },
 
         hours: {
             order: 3,
+            showing: true,
         },
 
         bartenders: {
             order: 4,
+            showing: true,
         },
 
         storage: {
             order: 5,
+            showing: true,
         },
 
         ontap: {
             order: 6,
+            showing: true,
         },
 
         layout: {
@@ -89,6 +95,17 @@ const bartenders_order = document.querySelector("#bartenders-order");
 const storage_order = document.querySelector("#storage-order");
 const ontap_order = document.querySelector("#ontap-order");
 
+const queue_checkbox = document.querySelector("#queue-showing");
+const serving_checkbox = document.querySelector("#serving-showing");
+const hours_checkbox = document.querySelector("#hours-showing");
+const bartenders_checkbox = document.querySelector("#bartenders-showing");
+const storage_checkbox = document.querySelector("#storage-showing");
+const ontap_checkbox = document.querySelector("#ontap-showing");
+
+
+const layout_section = document.querySelector("#layout-section");
+
+
 //submit?
 
 function savingLayoutSetting() {
@@ -101,7 +118,12 @@ function savingLayoutSetting() {
     layout_settings.storage.order = storage_order.value;
     layout_settings.ontap.order = ontap_order.value;
 
-    layout_settings.layout.style = layout_select.value;
+    layout_settings.queue.showing = queue_checkbox.checked;
+    layout_settings.serving.showing = serving_checkbox.checked;
+    layout_settings.hours.showing = hours_checkbox.checked;
+    layout_settings.bartenders.showing = bartenders_checkbox.checked;
+    layout_settings.storage.showing = storage_checkbox.checked;
+    layout_settings.ontap.showing = ontap_checkbox.checked;
 
     localStorage.setItem("layout_settings", JSON.stringify(layout_settings));
     setWidgetsOrder();
@@ -180,26 +202,32 @@ function resetSettings() {
     layout_settings = {
         queue: {
             order: 1,
+            showing: true,
         },
 
         serving: {
             order: 2,
+            showing: true,
         },
 
         hours: {
             order: 3,
+            showing: true,
         },
 
         bartenders: {
             order: 4,
+            showing: true,
         },
 
         storage: {
             order: 5,
+            showing: true,
         },
 
         ontap: {
             order: 6,
+            showing: true,
         },
 
         layout: {
@@ -219,4 +247,102 @@ function resetSettings() {
     layout_select.value = layout_settings.layout.style;
 
     checkImage();
+    setDisplayBox();
+
+    arrCheckboxes.forEach(checkbox => setDisplayArticle(checkbox));
+
 }
+
+//third settings 
+
+
+function setDisplayBox() {
+
+    queue_checkbox.checked = layout_settings.queue.showing;
+    serving_checkbox.checked = layout_settings.serving.showing;
+    hours_checkbox.checked = layout_settings.hours.showing;
+    bartenders_checkbox.checked = layout_settings.bartenders.showing;
+    storage_checkbox.checked = layout_settings.storage.showing;
+    ontap_checkbox.checked = layout_settings.ontap.showing;
+}
+
+export { setDisplayBox };
+
+const queue = document.querySelector("#queue");
+const serving = document.querySelector("#serving");
+const hours = document.querySelector("#hours");
+const bartenders = document.querySelector("#bartenders");
+const storage = document.querySelector("#storage");
+const ontap = document.querySelector("#ontap");
+
+const checkboxes = document.querySelectorAll(".form-for-showing > label > input");
+const arrCheckboxes = _.toArray(checkboxes);
+
+arrCheckboxes.forEach(checkbox => checkbox.addEventListener("change", (i) => {
+    setDisplayArticle(i.target);
+}));
+
+function setDisplayArticle(e) {
+
+    console.log(e);
+
+    switch (e.dataset.article) {
+
+        case "queue":
+            if (e.checked == true) {
+                queue.style.display = "flex";
+            }
+            else {
+                queue.style.display = "none";
+            }
+
+            break;
+
+        case "serving":
+
+            if (e.checked == true) {
+                serving.style.display = "flex";
+            }
+            else {
+                serving.style.display = "none";
+            }
+
+            break;
+        case "hours":
+
+            if (e.checked == true) {
+                hours.style.display = "flex";
+            }
+            else {
+                hours.style.display = "none";
+            }
+            break;
+
+        case "bartenders":
+            if (e.checked == true) {
+                bartenders.style.display = "flex";
+            }
+            else {
+                bartenders.style.display = "none";
+            }
+            break;
+
+        case "storage":
+            if (e.checked == true) {
+                storage.style.display = "flex";
+            }
+            else {
+                storage.style.display = "none";
+            }
+            break;
+
+        case "ontap":
+            if (e.checked == true) {
+                ontap.style.display = "flex";
+            }
+            else {
+                ontap.style.display = "none";
+            }
+            break;
+    }
+};
