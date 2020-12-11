@@ -870,9 +870,10 @@ select:hover {
 }
 
 @keyframes growSmaller {
-  0% {
+  from {
     height: var(--random-height);
   }
-  99% {
-    height: 1px;
+  to {
+    height: 5px;
+    opacity: 0;
 }};
