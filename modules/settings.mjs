@@ -12,25 +12,24 @@ const nav_settings = document.querySelector("#settings-nav");
 
 const login = document.querySelector("#login");
 const layout_button = document.querySelector("#layout");
-const theme = document.querySelector("#theme");
+const theme_button = document.querySelector("#theme");
 
 
 settings.addEventListener("click", showingSettings);
 home.addEventListener("click", showingDashboard);
 
 function showingSettings() {
+
     section_dashboard.style.display = "none";
     nav_dashboard.style.display = "none";
 
     section_settings.style.display = "flex";
     nav_settings.style.display = "flex";
-
-
 }
 
-function showingDashboard() {
+import { checkingDisplayonArticle } from '../modules/navbar.mjs';
 
-    console.log(dashboard_layout);
+function showingDashboard() {
 
     if (dashboard_layout == "columns") {
         section_dashboard.style.display = "block";
@@ -45,12 +44,12 @@ function showingDashboard() {
     };
 
     nav_dashboard.style.display = "flex";
-
-    section_settings.style.display = "none";
     nav_settings.style.display = "none";
 
     subsettings.forEach(newpage => newpage.style.display = "none");
     arrow_back.style.display = "none";
+
+    checkingDisplayonArticle();
 }
 
 // starting the subsettings
@@ -69,6 +68,14 @@ const arrow_back = document.querySelector(".arrow-back");
 arrow_back.addEventListener("click", goingBack);
 
 layout_button.addEventListener("click", showingLayout);
+theme_button.addEventListener("click", showTheme);
+
+function showTheme() {
+    arrow_back.style.display = "block";
+    theme_section.style.display = "flex";
+
+    section_settings.style.display = "none";
+}
 
 function showingLayout() {
 
@@ -87,4 +94,4 @@ function goingBack() {
     section_settings.style.display = "flex";
 
     arrow_back.style.display = "none";
-}
+} 

@@ -10,6 +10,7 @@ import * as hours from "../modules/hours.mjs";
 import * as navbar from "../modules/navbar.mjs";
 import * as settings from "../modules/settings.mjs";
 import * as layout from "../modules/layout-style.mjs";
+import * as colors from "../modules/colors.mjs";
 
 const UPDATE_INTERVAL = 5000; //in ms
 

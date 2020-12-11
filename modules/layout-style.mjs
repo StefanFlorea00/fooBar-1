@@ -106,7 +106,7 @@ const ontap_checkbox = document.querySelector("#ontap-showing");
 const layout_section = document.querySelector("#layout-section");
 
 
-//submit?
+//submit? Yes, it is the function linked to the save button
 
 function savingLayoutSetting() {
 
@@ -126,8 +126,10 @@ function savingLayoutSetting() {
     layout_settings.ontap.showing = ontap_checkbox.checked;
 
     localStorage.setItem("layout_settings", JSON.stringify(layout_settings));
+
     setWidgetsOrder();
     changeLayoutDashboard();
+
 
 }
 
@@ -264,6 +266,9 @@ function setDisplayBox() {
     bartenders_checkbox.checked = layout_settings.bartenders.showing;
     storage_checkbox.checked = layout_settings.storage.showing;
     ontap_checkbox.checked = layout_settings.ontap.showing;
+
+    console.log(queue_checkbox.checked);
+    console.log(layout_settings.queue.showing);
 }
 
 export { setDisplayBox };
@@ -282,18 +287,31 @@ arrCheckboxes.forEach(checkbox => checkbox.addEventListener("change", (i) => {
     setDisplayArticle(i.target);
 }));
 
+import { navEl_array } from '../modules/navbar.mjs';
+
 function setDisplayArticle(e) {
 
+    //e is the input checked or unchecked
     console.log(e);
+
+    // n is the button from navbar
+    let d = _.find(navEl_array, function (n) {
+        return n.dataset.article == e.dataset.article;
+    });
+
 
     switch (e.dataset.article) {
 
         case "queue":
             if (e.checked == true) {
-                queue.style.display = "flex";
+                queue.classList.remove("hidden");
+                queue.classList.add("showing");
+                d.classList.remove("hidden");
             }
             else {
-                queue.style.display = "none";
+                queue.classList.add("hidden");
+                queue.classList.remove("showing");
+                d.classList.add("hidden");
             }
 
             break;
@@ -301,47 +319,73 @@ function setDisplayArticle(e) {
         case "serving":
 
             if (e.checked == true) {
-                serving.style.display = "flex";
+                serving.classList.remove("hidden");
+                serving.classList.add("showing");
+                d.classList.remove("hidden");
             }
             else {
-                serving.style.display = "none";
+                serving.classList.add("hidden");
+                serving.classList.remove("showing");
+                d.classList.add("hidden");
             }
 
             break;
         case "hours":
 
             if (e.checked == true) {
-                hours.style.display = "flex";
+                hours.classList.remove("hidden");
+                hours.classList.add("showing");
+                d.classList.remove("hidden");
             }
             else {
-                hours.style.display = "none";
+                hours.classList.add("hidden");
+                hours.classList.remove("showing");
+                d.classList.add("hidden");
             }
             break;
 
         case "bartenders":
             if (e.checked == true) {
-                bartenders.style.display = "flex";
+                bartenders.classList.remove("hidden");
+                bartenders.classList.add("showing");
+                d.classList.remove("hidden");
+
             }
             else {
-                bartenders.style.display = "none";
+                bartenders.classList.add("hidden");
+                bartenders.classList.remove("showing");
+                d.classList.add("hidden");
+
             }
             break;
 
         case "storage":
             if (e.checked == true) {
-                storage.style.display = "flex";
+                storage.classList.remove("hidden");
+                storage.classList.add("showing");
+                d.classList.remove("hidden");
+
             }
             else {
-                storage.style.display = "none";
+                storage.classList.add("hidden");
+                storage.classList.remove("showing");
+                d.classList.add("hidden");
+
             }
             break;
 
         case "ontap":
             if (e.checked == true) {
-                ontap.style.display = "flex";
+                ontap.classList.remove("hidden");
+                ontap.classList.add("showing");
+                d.classList.remove("hidden");
+
             }
             else {
-                ontap.style.display = "none";
+                ontap.classList.add("hidden");
+                ontap.classList.remove("showing");
+                d.classList.add("hidden");
+
             }
             break;
     }

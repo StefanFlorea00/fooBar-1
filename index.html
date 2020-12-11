@@ -44,7 +44,7 @@
             <p class="pinned">QUEUE</p>
             <h1><span class="queue-number"> 4 </span><span class="queue-text">PEOPLE IN QUEUE</span></h1>
 
-            <div class="collapsed client-extanded" id="queue-wrapper">
+            <div class="client-extanded hidden" id="queue-wrapper">
             </div>
 
             <template id="client-template">
@@ -63,14 +63,14 @@
             <p class="pinned">SERVING</p>
             <h1><span class="queue-number"> 1 </span><span class="queue-text">CUSTOMER IS SERVED</span></h1>
 
-            <div class="collapsed client-extanded" id="serving-wrapper">
+            <div class="client-extanded hidden" id="serving-wrapper">
             </div>
         </article>
 
         <article id="hours">
             <p class="pinned">Hours</p>
-            <h1 class="hour-display" id="hour-display"> <span class="hour"></span><span class="time-span">h </span><span
-                    class="minutes"></span><span class="time-span">m</span></h1>
+            <h1 class="hour-display" id="hour-display"> <span class="hour"></span><span class="time-span">h
+                </span><span class="minutes"></span><span class="time-span">m</span></h1>
             <p>until closing time</p>
         </article>
 
@@ -308,7 +308,7 @@
                 </form>
             </div>
 
-            <div class="wrapper-buttons-form">
+            <div class="wrapper-buttons-form" id="submit-layout">
                 <input type="button" value="Reset" id="reset"></input>
                 <input type="button" value="Save changes" id="save-changes"></input></div>
         </div>
@@ -316,7 +316,25 @@
     </section>
 
     <!-- Login and everything related -->
-    <section id="theme-section" class="hidden"></section>
+    <section id="theme-section" class="hidden">
+        <div class="wrapper-settings">
+            <h1>Theme Style</h1>
+            <div class="color-settings">
+
+                <form class="form-color">
+                    <label for="main-color">Main Color <input type="color" id="main-color"></label>
+                    <label for="background-color">Background Color <input type="color" id="background-color"></label>
+                    <label for="highlight-color">Highlight Color <input type="color" id="highlight-color"></label>
+                    <label for="font-color">Widget Color <input type="color" id="font-color"></label>
+                </form>
+
+                <div class="wrapper-buttons-form" id="submit-color">
+                    <input type="button" value="Reset" id="reset-colors"></input>
+                    <input type="button" value="Save changes" id="save-colors"></input></div>
+            </div>
+
+        </div>
+    </section>
 
     <!--     <div class="update-timer">
         <div class="update-timer-fill"></div>

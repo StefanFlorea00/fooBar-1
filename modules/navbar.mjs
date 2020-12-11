@@ -1,21 +1,39 @@
 
+
 //set the arrays 
 const navEl = document.querySelectorAll("nav > ul > li");
 const navEl_array = _.toArray(navEl);
 
-const articleElement = document.querySelectorAll("article");
+export { navEl_array };
+
+const articleElement = document.querySelectorAll("#dashboard > article");
 const articleArray = _.toArray(articleElement);
+
+
+checkingDisplayonArticle();
+
+function checkingDisplayonArticle() {
+    let result = articleArray.filter(article => article.classList.contains("hidden"));
+    let shouldShow = _.difference(articleArray, result);
+    return shouldShow;
+}
+
+export { checkingDisplayonArticle };
 
 // need to match the button to the arrays
 navEl_array.forEach(li => li.addEventListener("click", () => {
 
+    let x = checkingDisplayonArticle();
+    console.log(x);
+
     //find the article you clicked on, and the other article
-    let a = _.find(articleArray, function (n) {
+    let a = _.find(x, function (n) {
         return n.attributes[0].value == li.dataset.article;
     });
 
-    let b = _.without(articleArray, a);
+    let b = _.without(x, a);
 
+    console.log(b);
     activateButton(a, b, li);
 
 }));
@@ -46,7 +64,6 @@ function activateButton(a, b, li) {
 
 function checkButtons(clicked) {
     let c = _.without(navEl_array, clicked);
-    console.log(c);
     c.forEach(li => li.classList.remove("active"));
 
-}
+} 
