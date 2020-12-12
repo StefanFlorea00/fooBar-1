@@ -438,7 +438,8 @@ h2 .hidden {
 }
 
 @keyframes growBigger {
-  0% {height: 0}
+  0% {height: 0;
+  opacity: 0;}
   99% {height: var(--random-height)}
   100% {height: auto}
 };
@@ -863,7 +864,7 @@ select:hover {
 
 .collapsed {
   display: none;
-}
+} 
 
 .sosmol {
   animation: growSmaller .5s ease-in-out forwards;
