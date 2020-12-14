@@ -8,8 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;1,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
@@ -47,6 +46,8 @@
             <div class="collapsed client-extanded" id="queue-wrapper">
             </div>
 
+            <canvas id="queue-chart">chart</canvas>
+
             <template id="client-template">
                 <div class="individual-client">
                     <img src="assets/customer_blue.png" alt="" class="client-logo">
@@ -69,8 +70,7 @@
 
         <article id="hours">
             <p class="pinned">Hours</p>
-            <h1 class="hour-display" id="hour-display"> <span class="hour"></span><span class="time-span">h </span><span
-                    class="minutes"></span><span class="time-span">m</span></h1>
+            <h1 class="hour-display" id="hour-display"> <span class="hour"></span><span class="time-span">h </span><span class="minutes"></span><span class="time-span">m</span></h1>
             <p>until closing time</p>
         </article>
 
@@ -276,33 +276,27 @@
             <div class="form-visible">
                 <form class="form-for-showing">
                     <label for="queue-showing">
-                        Queue<input type="checkbox" id="queue-showing" name="queue-showing" value="showing"
-                            data-article="queue">
+                        Queue<input type="checkbox" id="queue-showing" name="queue-showing" value="showing" data-article="queue">
                     </label>
 
                     <label for="serving-showing">Serving
-                        <input type="checkbox" id="serving-showing" name="serving-showing" value="showing"
-                            data-article="serving">
+                        <input type="checkbox" id="serving-showing" name="serving-showing" value="showing" data-article="serving">
                     </label>
 
                     <label for="hours-showing">Hours
-                        <input type="checkbox" id="hours-showing" name="hours-showing" value="showing"
-                            data-article="hours">
+                        <input type="checkbox" id="hours-showing" name="hours-showing" value="showing" data-article="hours">
                     </label>
 
                     <label for="bartenders-showing">Bartenders
-                        <input type="checkbox" id="bartenders-showing" name="bartenders-showing" value="showing"
-                            data-article="bartenders">
+                        <input type="checkbox" id="bartenders-showing" name="bartenders-showing" value="showing" data-article="bartenders">
                     </label>
 
                     <label for="storage-showing">Storage
-                        <input type="checkbox" id="storage-showing" name="storage-showing" value="showing"
-                            data-article="storage">
+                        <input type="checkbox" id="storage-showing" name="storage-showing" value="showing" data-article="storage">
                     </label>
 
                     <label for="ontap-showing">On tap
-                        <input type="checkbox" id="ontap-showing" name="ontap-showing" value="showing"
-                            data-article="ontap">
+                        <input type="checkbox" id="ontap-showing" name="ontap-showing" value="showing" data-article="ontap">
                     </label>
 
                 </form>
