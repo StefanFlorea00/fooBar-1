@@ -46,20 +46,27 @@ function activateButton(a, b, li) {
     //there is no active button
     if (li.classList.contains("active")) {
         li.classList.remove("active");
+        console.log("here");
+
         b.forEach(notselected => notselected.style.display = "flex");
         a.classList.remove("centered");
         a.querySelector(".chart").classList.add("hidden")
     }
 
     else {
+
         //hides all other articles
         b.forEach(notselected => notselected.style.display = "none");
         b.forEach(notselected => notselected.classList.remove("centered"));
         a.classList.add("centered");
         a.style.display = "flex";
-        if (a.querySelector(".chart") != 0) {
-            a.querySelector(".chart").classList.remove("hidden") //shows the chart when clicked on queue section
+
+        if (li.dataset.article == "queue") {
+            console.log("you have clicked on queue");
+            a.querySelector(".chart").classList.remove("hidden");
+
         }
+
         //activates button
         li.classList.add("active");
     }
