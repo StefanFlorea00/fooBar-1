@@ -18,27 +18,10 @@ export function get(callback) {
 export function prepareData(data) {
     showData(data);
     rootData = data;
+
 };
 
-// POST TO DB
-function post() {
-    const dataToPost = {
-        numberOfPeople: queueLength
-    };
 
-    const postData = JSON.stringify(dataToPost);
-    fetch(restDbUrl, {
-        method: "post",
-        headers: {
-            "Content-Type": "application/json; charset=utf-8",
-            "x-apikey": restDbAPIKey,
-            "cache-control": "no-cache"
-        },
-        body: postData
-    })
-        .then(res => res.json())
-        .then(data => console.log(data));
-}
 
 export function showData(data) {
 };
@@ -71,6 +54,51 @@ export function getQueueLength() {
     return rootData.queue.length;
 }
 
+
 export function getClosingTime() {
     return rootData.bar.closingTime;
 }
+
+
+
+
+
+
+
+
+// POST TO DB
+export function post() {
+    let queueData = getQueue();
+    let dataToPost = {};
+    for (let i = 0; i < queueData.length; i++) {
+        let orderID = queueData[i].id;
+        let startTimeStamp = queueData[i].startTime;
+        let order = queueData[i].order + ",";
+        let queueLength = queueData.length;
+        // console.log(queueLength)
+        // console.log(typeof order)
+
+
+
+        dataToPost = {
+            orderID: orderID,
+            startTime: startTimeStamp,
+            order: order,
+            queueLength: queueLength
+        };
+    }
+
+    const postData = JSON.stringify(dataToPost);
+    fetch(restDbUrl, {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "x-apikey": restDbAPIKey,
+            "cache-control": "no-cache"
+        },
+        body: postData
+    })
+        .then(res => res.json())
+        .then(data => console.log(data));
+}
+

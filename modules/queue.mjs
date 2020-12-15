@@ -7,6 +7,7 @@ export function init(data, data2) {
     clearPreviousQueue(TEMPLATE_DESTINATION);
     addQueueLength(data2);
     addCustomer(data);
+    getRestDBQueue(data);
 }
 
 function addCustomer(data) {
@@ -41,3 +42,92 @@ function addQueueLength(queueLength) {
     } else
         document.querySelector("#queue h1 .queue-text").textContent = "PERSON IN QUEUE";
 }
+
+
+
+// GET queue past data from RestDB 
+function getRestDBQueue() {
+    const restDbUrl = "https://foobar-ad40.restdb.io/rest/queue"; //RestDB url  for GETing queue data
+    const restDbAPIKey = "5fbf87774af3f9656800cf33" //RestDB API key 
+    fetch(restDbUrl, {
+        method: "get",
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "x-apikey": restDbAPIKey,
+            "cache-control": "no-cache"
+        }
+    })
+        .then(res => res.json())
+        .then(restDBQueueData =>
+            // when loaded, prepare objects
+            prepareQueueData(restDBQueueData));
+}
+
+
+function prepareQueueData(restDBQueueData) {
+    let queueHistory = restDBQueueData;
+    let queueLengthArray = [];
+    let orderStartTimeArray = [];
+    let chartXlabel = [];
+
+
+    for (let i = 0; i < queueHistory.length; i++) {
+        let queueHistoryData = queueHistory[i];
+        let orderTimeStamp = queueHistoryData.startTime;
+        let queueLength = queueHistoryData.queueLength;
+        let orderStartTime = new Date(orderTimeStamp); //convert timestamp to readable date
+        queueLengthArray.push(queueLength)
+        orderStartTimeArray.push(orderTimeStamp)
+
+    }
+
+    let chartQueueData = [];
+    for (let i = 0; i < 60; i++) {
+        chartQueueData.push({
+            x: i,
+            y: queueLengthArray[i]
+        })
+        chartXlabel.push(orderStartTimeArray[i])
+    }
+    chartJs(chartQueueData, chartXlabel);
+};
+
+
+
+function chartJs(chartQueueData, chartXlabel) {
+    var ctx = document.getElementById('queue-chart').getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: chartXlabel,
+            datasets: [{
+                label: 'number of people in queue',
+                backgroundColor: 'rgb(255, 99, 132)',
+                data: chartQueueData
+
+            }],
+            gridLines: [{
+                display: false
+            }
+            ]
+        },
+
+        // Configuration options go here
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }],
+                xAxes: [{
+                    display: false
+
+                }]
+            }
+        }
+    });
+}
+
