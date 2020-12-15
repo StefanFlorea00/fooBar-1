@@ -21,11 +21,11 @@ db.get(db.prepareData);
 //updateTimer();
 setTimeout(updateComponents, 100);
 
-setInterval(() => {
+/* setInterval(() => {
     db.get(db.prepareData);
     updateComponents();
     //updateTimer();
-}, UPDATE_INTERVAL);
+}, UPDATE_INTERVAL); */
 
 
 function updateComponents() {

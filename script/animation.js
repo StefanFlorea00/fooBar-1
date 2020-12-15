@@ -82,7 +82,6 @@ function gettingTapup() {
 
 
         document.querySelectorAll(".extanded-tap").forEach(tap => {
-            document.querySelector(".wrapper-taps").classList.remove("animation-flag");
 
             tap.classList.remove("expanding");
             document.documentElement.style.setProperty('--random-height', `${tap.offsetHeight}px`);
@@ -92,7 +91,7 @@ function gettingTapup() {
             let y = document.querySelector(".sosmol");
             y.addEventListener("animationend", (e) => {
                 console.log(e.target);
-                e.target.classList.add("collpased");
+                e.target.classList.add("collapsed");
                 e.target.classList.remove("sosmol");
             }, { once: true });
 
