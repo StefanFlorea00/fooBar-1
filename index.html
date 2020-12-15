@@ -46,7 +46,10 @@
             <div class="collapsed client-extanded" id="queue-wrapper">
             </div>
 
-            <canvas id="queue-chart">chart</canvas>
+            <div class="chart hidden">
+                <h2>Previous number of people in queue in the last hour: </h2>
+                <canvas id="queue-chart">chart</canvas>
+            </div>
 
             <template id="client-template">
                 <div class="individual-client">
@@ -304,7 +307,8 @@
 
             <div class="wrapper-buttons-form">
                 <input type="button" value="Reset" id="reset"></input>
-                <input type="button" value="Save changes" id="save-changes"></input></div>
+                <input type="button" value="Save changes" id="save-changes"></input>
+            </div>
         </div>
 
     </section>

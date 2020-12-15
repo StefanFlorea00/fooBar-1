@@ -7,8 +7,7 @@ export function init(data, data2) {
     clearPreviousQueue(TEMPLATE_DESTINATION);
     addQueueLength(data2);
     addCustomer(data);
-    // getRestDBQueue(data);
-    // queueTimeStamp(data)
+    getRestDBQueue(data);
 }
 
 function addCustomer(data) {
@@ -46,28 +45,10 @@ function addQueueLength(queueLength) {
 
 
 
-
-// function queueTimeStamp(data) {
-//     let queueArray = data;
-//     for (let i = 0; i < queueArray.length; i++) {
-//         let orderTimeStamp = queueArray[i].startTime;
-//         console.log(orderTimeStamp)
-
-//         let orderTime = new Date(orderTimeStamp);
-//         console.log(orderTime)
-//     };
-// }
-
-
-
-
-// GET
-
+// GET queue past data from RestDB 
 function getRestDBQueue() {
-    const restDbUrl = "https://foobar-ad40.restdb.io/rest/queue"; //RestDB url link for POSTing to queue
+    const restDbUrl = "https://foobar-ad40.restdb.io/rest/queue"; //RestDB url  for GETing queue data
     const restDbAPIKey = "5fbf87774af3f9656800cf33" //RestDB API key 
-
-
     fetch(restDbUrl, {
         method: "get",
         headers: {
@@ -80,41 +61,51 @@ function getRestDBQueue() {
         .then(restDBQueueData =>
             // when loaded, prepare objects
             prepareQueueData(restDBQueueData));
-
-
 }
 
 
 function prepareQueueData(restDBQueueData) {
     let queueHistory = restDBQueueData;
-    // console.log(queueHistory)
-    // console.log(queueHistory[0].numberOfPeople);
-    // console.log(queueHistory.length);
+    let queueLengthArray = [];
+    let orderStartTimeArray = [];
+    let chartXlabel = [];
+
 
     for (let i = 0; i < queueHistory.length; i++) {
-        let queueHistoryData = queueHistory[i].numberOfPeople;
-        // console.log(queueHistoryData);
-        // chartJs(queueHistoryData);
+        let queueHistoryData = queueHistory[i];
+        let orderTimeStamp = queueHistoryData.startTime;
+        let queueLength = queueHistoryData.queueLength;
+        let orderStartTime = new Date(orderTimeStamp); //convert timestamp to readable date
+        queueLengthArray.push(queueLength)
+        orderStartTimeArray.push(orderTimeStamp)
+
     }
+
+    let chartQueueData = [];
+    for (let i = 0; i < 60; i++) {
+        chartQueueData.push({
+            x: i,
+            y: queueLengthArray[i]
+        })
+        chartXlabel.push(orderStartTimeArray[i])
+    }
+    chartJs(chartQueueData, chartXlabel);
 };
 
 
 
-function chartJs(queueHistoryData) {
+function chartJs(chartQueueData, chartXlabel) {
     var ctx = document.getElementById('queue-chart').getContext('2d');
     var chart = new Chart(ctx, {
-        // The type of chart we want to create
         type: 'line',
 
         // The data for our dataset
         data: {
-            labels: [],
-            // labels: ['', '', '', '', '', '', '', '', '', '', '', ''],
+            labels: chartXlabel,
             datasets: [{
-                // label: 'actual people in queue',
+                label: 'number of people in queue',
                 backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: queueHistoryData,
+                data: chartQueueData
 
             }],
             gridLines: [{
@@ -125,14 +116,18 @@ function chartJs(queueHistoryData) {
 
         // Configuration options go here
         options: {
-            legend: {
-                display: false
-            },
-            tooltips: {
-                enabled: false
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }],
+                xAxes: [{
+                    display: false
+
+                }]
             }
-
-
         }
     });
 }
+

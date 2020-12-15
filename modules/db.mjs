@@ -19,10 +19,6 @@ export function prepareData(data) {
     showData(data);
     rootData = data;
 
-    // post(data);
-    // setTimeout(post(data), 30000);
-
-
 };
 
 
@@ -71,42 +67,38 @@ export function getClosingTime() {
 
 
 // POST TO DB
-
-
-
-function post(data) {
-
+export function post() {
     let queueData = getQueue();
+    let dataToPost = {};
     for (let i = 0; i < queueData.length; i++) {
         let orderID = queueData[i].id;
         let startTimeStamp = queueData[i].startTime;
-        let order = queueData[i].order;
-        // console.log(orderID, startTimeStamp, order)
+        let order = queueData[i].order + ",";
+        let queueLength = queueData.length;
+        // console.log(queueLength)
+        // console.log(typeof order)
 
 
-        // let startTime = new Date(orderTimeStamp);
 
-        const dataToPost = {
+        dataToPost = {
             orderID: orderID,
             startTime: startTimeStamp,
-            order: order
+            order: order,
+            queueLength: queueLength
         };
-
-        const postData = JSON.stringify(dataToPost);
-        fetch(restDbUrl, {
-            method: "post",
-            headers: {
-                "Content-Type": "application/json; charset=utf-8",
-                "x-apikey": restDbAPIKey,
-                "cache-control": "no-cache"
-            },
-            body: postData
-        })
-            .then(res => res.json())
-            .then(data => console.log(data));
-
     }
-    // setTimeout(post, 30000)
-}
 
+    const postData = JSON.stringify(dataToPost);
+    fetch(restDbUrl, {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "x-apikey": restDbAPIKey,
+            "cache-control": "no-cache"
+        },
+        body: postData
+    })
+        .then(res => res.json())
+        .then(data => console.log(data));
+}
 

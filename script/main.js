@@ -27,6 +27,11 @@ setInterval(() => {
 }, UPDATE_INTERVAL);
 
 
+// seting a bigger interval for posting to restDB
+setInterval(() => {
+    // db.post();
+}, 25000);
+
 function updateComponents() {
     setTimeout(() => {
         storage.init(db.getStorage());

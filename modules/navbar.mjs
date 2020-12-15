@@ -30,6 +30,7 @@ function activateButton(a, b, li) {
         li.classList.remove("active");
         b.forEach(notselected => notselected.style.display = "flex");
         a.classList.remove("centered");
+        a.querySelector(".chart").classList.add("hidden")
     }
 
     else {
@@ -38,7 +39,9 @@ function activateButton(a, b, li) {
         b.forEach(notselected => notselected.classList.remove("centered"));
         a.classList.add("centered");
         a.style.display = "flex";
-
+        if (a.querySelector(".chart") != 0) {
+            a.querySelector(".chart").classList.remove("hidden") //shows the chart when clicked on queue section
+        }
         //activates button
         li.classList.add("active");
     }
