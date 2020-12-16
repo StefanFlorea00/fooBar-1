@@ -2,8 +2,8 @@
   --font-color: white;
   --background-color: rgba(86, 110, 187, 0.1);
   --nav-color: #5e8aa8;
-  --main-color: #326EBE;
-  --highlight-color:#F27627;
+  --main-color: #326ebe;
+  --highlight-color: #f27627;
 
   --primary-font: "Lato", sans-serif;
   --title-font: "Lato", sans-serif;
@@ -17,7 +17,6 @@ body {
 
   display: flex;
   flex-flow: column;
-
 
   background-color: var(--background-color);
   font-family: var(--primary-font);
@@ -45,14 +44,13 @@ h1 > .queue-text {
   margin: 0;
   font-size: 1em;
   color: var(--main-color);
-
 }
 
 p {
   color: var(--main-color);
 }
 
-/* setting the order for everything */ 
+/* setting the order for everything */
 
 #queue {
   overflow: hidden;
@@ -61,7 +59,7 @@ p {
 
 #serving {
   overflow: hidden;
-  order:2;
+  order: 2;
 }
 
 #hours {
@@ -111,7 +109,7 @@ nav > ul > li:hover {
   color: var(--main-color);
   cursor: pointer;
   background-color: var(--main-color);
-  color: white; 
+  color: white;
   border-radius: 40px;
 }
 
@@ -130,52 +128,50 @@ nav > ul > img:hover {
   #dashboard-nav > ul {
     display: grid;
     grid-template-columns: repeat(3, auto);
-    
-    }
-
+  }
 }
 
 @media screen and (min-width: 300px) and (max-width: 599px) {
   #dashboard-nav > ul {
     display: flex;
-    }
+  }
 
   .settings-button {
     padding: 0 2em;
   }
 }
 
-
 /* media queries for layout */
 
 @media only screen and (min-width: 1200px) {
-.columns {
-  columns: 3;
-}}
+  .columns {
+    columns: 3;
+  }
+}
 
 @media only screen and (max-width: 1199px) {
   .columns {
     columns: 2;
-  }}
+  }
+}
 
-  @media only screen and (min-width: 100px) and (max-width: 700px) {
-    .columns {
-      columns: 1;
-    }}
+@media only screen and (min-width: 100px) and (max-width: 700px) {
+  .columns {
+    columns: 1;
+  }
+}
 
+.grid-dashboard {
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-auto-flow: row dense;
+}
 
-    .grid-dashboard {
-      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-      grid-auto-flow: row dense;
-    }
-
-
-    @media only screen and (min-width) {
-      .grid-dashboard {
-        grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
-        grid-auto-flow: row dense;
-      }
-    }
+@media only screen and (min-width) {
+  .grid-dashboard {
+    grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+    grid-auto-flow: row dense;
+  }
+}
 /* styling for the section */
 
 section {
@@ -246,12 +242,14 @@ article:nth-child(6) {
   justify-content: center;
 }
 
-#storage, #ontap {
+#storage,
+#ontap {
   grid-column: auto / span 2;
 }
 
-@media only screen and (min-width: 100px) and (max-width: 800px){
-  #storage, #ontap {
+@media only screen and (min-width: 100px) and (max-width: 800px) {
+  #storage,
+  #ontap {
     grid-column: auto;
   }
 }
@@ -267,9 +265,9 @@ article:nth-child(6) {
   color: var(--main-color);
 }
 
-#hour-display > .hour, #hour-display > .minutes {
+#hour-display > .hour,
+#hour-display > .minutes {
   color: var(--highlight-color);
-
 }
 
 .time-span {
@@ -312,7 +310,7 @@ article:nth-child(6) {
 
   height: 30px;
   width: 30px;
-  background-color: #B13A16;
+  background-color: #b13a16;
   border-radius: 100%;
   align-self: flex-end;
   justify-self: flex-end;
@@ -340,7 +338,6 @@ article:nth-child(6) {
 .stored-keg h2 {
   display: flex;
   align-items: baseline;
-
 }
 
 .kegs {
@@ -358,7 +355,7 @@ h2 .hidden {
 }
 
 .keg-amount {
-  color: #7198CA;
+  color: #7198ca;
   font-size: 2em;
   font-weight: 700;
 
@@ -434,23 +431,28 @@ h2 .hidden {
 /* working on expanded components */
 
 .expanding {
-  animation: growBigger .5s ease-in-out forwards;
+  animation: growBigger 0.5s ease-in-out forwards;
 }
 
 @keyframes growBigger {
-  0% {height: 0;
-  opacity: 0;}
-  99% {height: var(--random-height)}
-  100% {height: auto}
-};
-
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  99% {
+    height: var(--random-height);
+  }
+  100% {
+    height: auto;
+  }
+}
 
 /* queue */
 
 #queue-wrapper {
   overflow: hidden;
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .individual-client {
@@ -466,7 +468,7 @@ h2 .hidden {
   color: var(--main-color);
 }
 
-.order-queue > h3 > span{
+.order-queue > h3 > span {
   font-size: 1.3em;
   margin-bottom: 0.5em;
   color: var(--highlight-color);
@@ -481,14 +483,12 @@ h2 .hidden {
   margin-top: 0;
   text-align: left;
   font-size: 0.8em;
-
 }
 
 .order-queue > ul > li {
   padding: 0;
   margin: 0;
 }
-
 
 .client-logo {
   grid-row: auto / span 2;
@@ -552,7 +552,6 @@ h2 .hidden {
   display: grid;
 }
 
-
 /* update timer */
 
 .update-timer {
@@ -582,8 +581,7 @@ h2 .hidden {
   }
 }
 
-
-/* working on the settings */ 
+/* working on the settings */
 
 #settings-nav {
   margin-top: 1em;
@@ -621,7 +619,6 @@ h2 .hidden {
   position: absolute;
   top: 10px;
   left: 30px;
-
 }
 
 .arrow-back:hover {
@@ -633,11 +630,13 @@ h2 .hidden {
   transform: rotate(-45deg);
 }
 
-#layout-section, #theme-section, #login-section {
+#layout-section,
+#theme-section,
+#login-section {
   flex-flow: column wrap;
 }
 
-/* layout settings */ 
+/* layout settings */
 
 .first-layout-settings {
   display: flex;
@@ -645,8 +644,9 @@ h2 .hidden {
 }
 
 @media only screen and (max-width: 800px) {
-
-  .first-layout-settings, .form-order, .form-visible {
+  .first-layout-settings,
+  .form-order,
+  .form-visible {
     width: 100vw;
   }
 }
@@ -671,12 +671,13 @@ h2 .hidden {
 .wrapper-settings > h1 {
   color: var(--main-color);
   border: solid var(--main-color);
-  border-width: 0 0 1px 0; 
+  border-width: 0 0 1px 0;
   font-weight: 300;
   padding-left: 0.5em;
 }
 
-.form-for-order, .form-for-showing {
+.form-for-order,
+.form-for-showing {
   display: grid;
   justify-content: space-around;
 
@@ -686,10 +687,11 @@ h2 .hidden {
 }
 
 @media only screen and (max-width: 600px) {
-  .form-for-order, .form-for-showing {
+  .form-for-order,
+  .form-for-showing {
     display: grid;
     justify-content: space-around;
-  
+
     grid-template-columns: repeat(1, 190px);
     grid-gap: 20px;
     margin: 30px 0;
@@ -739,16 +741,17 @@ select:hover {
   text-align: center;
 }
 
-#reset, #reset-colors {
+#reset,
+#reset-colors {
   border: none;
   padding-right: 1em;
   cursor: pointer;
-  color:grey;
+  color: grey;
   background-color: transparent;
 }
 
-#save-changes, #save-colors {
-
+#save-changes,
+#save-colors {
   border: solid 1px var(--highlight-color);
   border-radius: 5px;
   color: var(--highlight-color);
@@ -766,7 +769,8 @@ select:hover {
   flex-flow: column;
 }
 
-#save-changes:hover, #save-colors:hover {
+#save-changes:hover,
+#save-colors:hover {
   cursor: pointer;
   transform: scale(1.1);
   background-color: var(--highlight-color);
@@ -774,10 +778,9 @@ select:hover {
 }
 
 @media only screen and (min-width: 800px) {
-
   .wrapper-settings {
-    margin: 10px 20vw; 
-  } 
+    margin: 10px 20vw;
+  }
 
   .wrapper-settings > h1 {
     padding-left: 0px;
@@ -786,7 +789,6 @@ select:hover {
   label {
     align-items: center;
     font-size: 1.3em;
-
   }
 
   label > select {
@@ -805,12 +807,10 @@ select:hover {
 
 /* media queries at the bottom */
 
-
 @media only screen and (max-width: 1295px) {
   body {
     flex-flow: column;
   }
-
 
   .ver {
     position: relative;
@@ -832,14 +832,15 @@ select:hover {
     max-height: 100px;
     height: 100%;
     justify-self: center;
-  }}
-
-  @media only screen and (max-width: 500px) {
-    .centered {
-      max-width: 100vw;
-      margin-left: auto;
-    }
   }
+}
+
+@media only screen and (max-width: 500px) {
+  .centered {
+    max-width: 100vw;
+    margin-left: auto;
+  }
+}
 
 /* general styling for javascript */
 
@@ -847,7 +848,7 @@ select:hover {
   color: var(--main-color);
   cursor: pointer;
   background-color: var(--main-color);
-  color: white; 
+  color: white;
   border-radius: 40px;
 }
 
@@ -864,10 +865,10 @@ select:hover {
 
 .collapsed {
   display: none;
-} 
+}
 
 .sosmol {
-  animation: growSmaller .5s ease-in-out forwards;
+  animation: growSmaller 0.5s ease-in-out forwards;
 }
 
 @keyframes growSmaller {
@@ -877,4 +878,5 @@ select:hover {
   to {
     height: 5px;
     opacity: 0;
-}};
+  }
+} ;
