@@ -21,16 +21,16 @@ db.get(db.prepareData);
 //updateTimer();
 setTimeout(updateComponents, 100);
 
-/* setInterval(() => {
+setInterval(() => {
     db.get(db.prepareData);
     updateComponents();
     //updateTimer();
-}, UPDATE_INTERVAL); */
+}, UPDATE_INTERVAL);
 
 
 // seting a bigger interval for posting to restDB
 setInterval(() => {
-    // db.post();
+    db.post();
 }, 25000);
 
 function updateComponents() {
