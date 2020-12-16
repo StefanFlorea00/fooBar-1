@@ -391,7 +391,6 @@ h2 .hidden {
   border: solid 4px var(--main-color);
   height: 100%;
   width: 20px;
-
   display: flex;
   flex-flow: column-reverse;
 }

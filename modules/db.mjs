@@ -7,6 +7,7 @@ const restDbAPIKey = "5fbf87774af3f9656800cf33" //RestDB API key
 
 export let rootData = "";
 
+// Fetching the raw data from Heroku server
 export function get(callback) {
     fetch(url)
         .then((response) => response.json())
@@ -15,13 +16,17 @@ export function get(callback) {
         });
 };
 
+
 export function prepareData(data) {
     showData(data);
     rootData = data;
-
+    // calling the function to post queue data to RestDB
+    // it's commented out so it doesen't post continuous, considering the free account limitations 
+    // post();    
 };
 
 
+// spliting the raw data into individual scope for components
 
 export function showData(data) {
 };
@@ -54,7 +59,6 @@ export function getQueueLength() {
     return rootData.queue.length;
 }
 
-
 export function getClosingTime() {
     return rootData.bar.closingTime;
 }
@@ -66,7 +70,8 @@ export function getClosingTime() {
 
 
 
-// POST TO DB
+
+// POST live queue data to RestDB for later use
 export function post() {
     let queueData = getQueue();
     let dataToPost = {};
@@ -75,11 +80,8 @@ export function post() {
         let startTimeStamp = queueData[i].startTime;
         let order = queueData[i].order + ",";
         let queueLength = queueData.length;
-        // console.log(queueLength)
-        // console.log(typeof order)
 
-
-
+        // creating object and its format for the posting data in order to match the RestDB
         dataToPost = {
             orderID: orderID,
             startTime: startTimeStamp,
@@ -87,8 +89,9 @@ export function post() {
             queueLength: queueLength
         };
     }
-
+    // converting the post object to JSON string
     const postData = JSON.stringify(dataToPost);
+
     fetch(restDbUrl, {
         method: "post",
         headers: {

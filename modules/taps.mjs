@@ -2,28 +2,20 @@
 
 const TEMPLATE_SOURCE = "#tap-template";
 const TEMPLATE_DESTINATION = ".wrapper-taps";
-
 let extended = false;
 
 export function init(data) {
-
-
     if (document.querySelector(".wrapper-taps").classList.contains("extended")) {
         extended = true;
     } else
         extended = false;
-    // console.warn(extended);
-
-
     clearPreviousTaps(TEMPLATE_DESTINATION);
     tapsInfo(data);
-
 }
 
-function tapsInfo(data) { //takes the names from JSON data and add them to each tap
+function tapsInfo(data) { //takes the beer names from JSON data and add them to each tap
 
     let tapsArray = data;
-    // console.log(tapsArray)
     const template = document.querySelector(TEMPLATE_SOURCE).content;
 
     if (extended) {
@@ -34,9 +26,10 @@ function tapsInfo(data) { //takes the names from JSON data and add them to each 
     for (let i = 0; i < tapsArray.length; i++) {
         const clone = template.cloneNode(true);
         clone.querySelector(".beer-name").textContent = tapsArray[i].beer;
-        clone.querySelector(".tap-levelbar-fill").style.height = (tapsArray[i].level / 2500) * 100 + "%"; //sets the height of the fill div in relation to the level
+        // level bar of the tap remaining beer quantity
+        // sets the height of the fill div in relation to the level of the beer in the tap
+        clone.querySelector(".tap-levelbar-fill").style.height = (tapsArray[i].level / 2500) * 100 + "%";
         clone.querySelector(".extanded-tap span").textContent = tapsArray[i].level;
-        // console.log(tapsArray[i].beer, tapsArray[i].level)
 
         // Showing which tap is in use/idle
         if (tapsArray[i].inUse) {
@@ -48,6 +41,7 @@ function tapsInfo(data) { //takes the names from JSON data and add them to each 
 
     }
 }
+
 
 function clearPreviousTaps(el) {
     document.querySelector(el).innerHTML = "";
