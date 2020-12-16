@@ -45,7 +45,7 @@ function addQueueLength(queueLength) {
 
 
 
-// GET queue past data from RestDB 
+// GET queue previous stored data from RestDB 
 function getRestDBQueue() {
     const restDbUrl = "https://foobar-ad40.restdb.io/rest/queue"; //RestDB url  for GETing queue data
     const restDbAPIKey = "5fbf87774af3f9656800cf33" //RestDB API key 
@@ -64,6 +64,8 @@ function getRestDBQueue() {
 }
 
 
+
+// Preparing the data and declaring the variable needed for Chart use
 function prepareQueueData(restDBQueueData) {
     let queueHistory = restDBQueueData;
     let queueLengthArray = [];
@@ -75,13 +77,14 @@ function prepareQueueData(restDBQueueData) {
         let queueHistoryData = queueHistory[i];
         let orderTimeStamp = queueHistoryData.startTime;
         let queueLength = queueHistoryData.queueLength;
-        let orderStartTime = new Date(orderTimeStamp); //convert timestamp to readable date
+        // let orderStartTime = new Date(orderTimeStamp); //convert timestamp to readable date
         queueLengthArray.push(queueLength)
         orderStartTimeArray.push(orderTimeStamp)
 
     }
 
     let chartQueueData = [];
+    // making the array for feeding the chart
     for (let i = 0; i < 60; i++) {
         chartQueueData.push({
             x: i,
@@ -93,13 +96,12 @@ function prepareQueueData(restDBQueueData) {
 };
 
 
-
+// ChartJs 
 function chartJs(chartQueueData, chartXlabel) {
     var ctx = document.getElementById('queue-chart').getContext('2d');
     var chart = new Chart(ctx, {
         type: 'line',
-
-        // The data for our dataset
+        // The queue data for our dataset
         data: {
             labels: chartXlabel,
             datasets: [{
@@ -113,8 +115,7 @@ function chartJs(chartQueueData, chartXlabel) {
             }
             ]
         },
-
-        // Configuration options go here
+        // Configuration options 
         options: {
             scales: {
                 yAxes: [{
