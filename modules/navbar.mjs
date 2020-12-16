@@ -50,7 +50,10 @@ function activateButton(a, b, li) {
 
         b.forEach(notselected => notselected.style.display = "flex");
         a.classList.remove("centered");
-        a.querySelector(".chart").classList.add("hidden")
+
+        if (li.dataset.article == "queue") {
+            a.querySelector(".chart").classList.add("hidden")
+        };
     }
 
     else {
