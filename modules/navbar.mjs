@@ -9,6 +9,7 @@ export { navEl_array };
 const articleElement = document.querySelectorAll("#dashboard > article");
 const articleArray = _.toArray(articleElement);
 
+export { articleArray };
 
 checkingDisplayonArticle();
 
@@ -24,7 +25,6 @@ export { checkingDisplayonArticle };
 navEl_array.forEach(li => li.addEventListener("click", () => {
 
     let x = checkingDisplayonArticle();
-    console.log(x);
 
     //find the article you clicked on, and the other article
     let a = _.find(x, function (n) {
@@ -45,9 +45,8 @@ function activateButton(a, b, li) {
 
     //there is no active button
     if (li.classList.contains("active")) {
-        li.classList.remove("active");
-        console.log("here");
 
+        li.classList.remove("active");
         b.forEach(notselected => notselected.style.display = "flex");
         a.classList.remove("centered");
 

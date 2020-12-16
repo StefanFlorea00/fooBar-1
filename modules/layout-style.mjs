@@ -49,7 +49,10 @@ image_example.value = layout_settings.layout.style;
 
 export let dashboard_layout;
 
+//make sure it shows the right image for the layout settings
 checkImage();
+
+//changes the dashboard to the matching layout
 changeLayoutDashboard();
 
 layout_select.addEventListener("change", checkImage);
@@ -80,8 +83,8 @@ function changeLayoutDashboard() {
     }
 
 }
-// for the second part of the settings
 
+// for the second part of the settings
 const submit_button = document.querySelector("#save-changes");
 submit_button.addEventListener("click", savingLayoutSetting);
 
@@ -130,7 +133,6 @@ function savingLayoutSetting() {
     setWidgetsOrder();
     changeLayoutDashboard();
 
-
 }
 
 const listArrayValue = document.querySelectorAll(".order-select");
@@ -157,12 +159,19 @@ function checkingValidity() {
     });
 }
 
+
+import { articleArray } from "../modules/navbar.mjs"
+
 function checkCurrentValues() {
 
     let currentValue = [];
     currentValue = [];
 
-    const possibleValues = ["1", "2", "3", "4", "5", "6"];
+    const possibleValues = [];
+
+    for (let a = 1; a < articleArray.length + 1; a++) {
+        possibleValues.push(a);
+    }
 
     for (let i = arraySelectValue.length - 1; i > -1; i--) {
         currentValue.push(arraySelectValue[i].value);
@@ -170,8 +179,6 @@ function checkCurrentValues() {
 
 
     let absentValue = _.difference(possibleValues, currentValue);
-    console.log(currentValue);
-
     return absentValue
 };
 
