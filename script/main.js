@@ -30,7 +30,9 @@ setInterval(() => {
 
 // seting a bigger interval for posting to restDB
 setInterval(() => {
-    db.post();
+    // calling the function to post queue data to RestDB
+    // it's commented out so it doesen't post continuous, considering the free account limitations, restDB can't keep up
+    // db.post();
 }, 25000);
 
 function updateComponents() {
