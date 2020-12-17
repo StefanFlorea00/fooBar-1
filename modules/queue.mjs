@@ -2,15 +2,20 @@
 
 const TEMPLATE_SOURCE = "#client-template";
 const TEMPLATE_DESTINATION = "#queue-wrapper";
+let fetched = false;
 
 export function init(data, data2) {
     clearPreviousQueue(TEMPLATE_DESTINATION);
     addQueueLength(data2);
     addCustomer(data);
-    
-    // it's commented out so it doesen't fetch continuous, considering the free account limitations, restDB can't keep up
-   // getRestDBQueue(data); 
+    // this condition is to get the data from database just once in order to demonstrate the chart feature
+    // because of free account limitation, live/continuous posting/getting, RestDb doesen't keep up and return "timeout error"
+    if (fetched == false) {
+        getRestDBQueue();
+        fetched = true;
+    }
 }
+
 
 function addCustomer(data) {
     let queueArray = data;
@@ -49,7 +54,7 @@ function addQueueLength(queueLength) {
 
 // GET queue previous stored data from RestDB 
 function getRestDBQueue() {
-    const restDbUrl = "https://foobar-ad40.restdb.io/rest/queue"; //RestDB url  for GETing queue data
+    const restDbUrl = "https://foobar-ad40.restdb.io/rest/queue"; //RestDB url  for GETting queue data
     const restDbAPIKey = "5fbf87774af3f9656800cf33" //RestDB API key 
     fetch(restDbUrl, {
         method: "get",
@@ -73,8 +78,6 @@ function prepareQueueData(restDBQueueData) {
     let queueLengthArray = [];
     let orderStartTimeArray = [];
     let chartXlabel = [];
-
-
     for (let i = 0; i < queueHistory.length; i++) {
         let queueHistoryData = queueHistory[i];
         let orderTimeStamp = queueHistoryData.startTime;
