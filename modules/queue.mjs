@@ -7,7 +7,9 @@ export function init(data, data2) {
     clearPreviousQueue(TEMPLATE_DESTINATION);
     addQueueLength(data2);
     addCustomer(data);
-    getRestDBQueue(data);
+    
+    // it's commented out so it doesen't fetch continuous, considering the free account limitations, restDB can't keep up
+   // getRestDBQueue(data); 
 }
 
 function addCustomer(data) {
